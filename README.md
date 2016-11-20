@@ -1,8 +1,4 @@
- ____  _    _            _
- | __ )| | _| |_ ___  ___| |__
- |  _ \| |/ / __/ _ \/ __| '_ \
- | |_) |   <| ||  __/ (__| | | |
- |____/|_|\_\\__\___|\___|_| |_|  PLUTARCO - Versão 0.9.8 - Criado por BKTECH <http://www.bktech.com.br>
+PLUTARCO - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
  
 ################################# Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> ########################
 
