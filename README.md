@@ -22,15 +22,15 @@ APLICAÇÃO EM PARTICULAR.
 												
 Changelog: Criação do arquivo (Fabio Soares Schmidt)
 
- *****  INSTALAÇÃO ******
+# INSTALAÇÃO
  
  (FAVOR LER O ARQUIVO INSTALL)
  
- ***** UTILIZAÇÃO  ******
+# UTILIZAÇÃO
  
  (FAVOR LER O ARQUIVO INSTALL)
   
-  ***** PLUTARCO  ******
+# PLUTARCO
 
  Essa ferramenta foi criada visando facilitar o processo de migração entre ambientes Zimbra, independentemente de qual versão
  ou edição esteja sendo utilizada ****. Motivada pelos desafios encontrados em migrações efetuadas pela BKTECH (parceiro oficial Zimbra para negócios
@@ -38,17 +38,14 @@ Changelog: Criação do arquivo (Fabio Soares Schmidt)
  
  *** Em casos de Upgrade, isto é, migar PARA uma versão mais nova do Zimbra. Não é garantido o funcionamento em casos de downgrade.
  
- Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo,
- exportando as classes de serviço, contas, nomes alternativos e listas de distribuição. Nesta primeira versão (0.9.8), PLUTARCO facilita o processo
- de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox.
+Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo, exportando as classes de serviço, contas, nomes alternativos e listas de distribuição. Nesta primeira versão (0.9.8), PLUTARCO facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox.
  
- Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server, além da exportação das principais configurações do ambiente Zimbra.
- Também está no plano de evolução da mesma, o tratamento de diferentes estratégias de migração, permitindo migrações gradativas, por exemplo, através
- de processos de export e import incrementais. 
+Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server, além da exportação das principais configurações do ambiente Zimbra.
+
+Também está no plano de evolução da mesma, o tratamento de diferentes estratégias de migração, permitindo migrações gradativas, por exemplo, através  de processos de export e import incrementais. 
  
- Esta primeira versão (0.9.8), é considerada BETA e conta com a colaboração da comunidade para testes, críticas, sugestões e traduções para que possa ser 
- lançada como versão estável.
+Esta primeira versão (0.9.8), é considerada BETA e conta com a colaboração da comunidade para testes, críticas, sugestões e traduções para que possa ser lançada como versão estável.
  
- TODA avaliação e contribução (codificação) é muito bem-vinda !
+TODA avaliação e contribução (codificação) é muito bem-vinda !
  
  Obrigado desde já pela atenção.
