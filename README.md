@@ -1,8 +1,8 @@
-PLUTARCO - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
+# PLUTARCO - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
  
-Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
+# Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
 
-DISTRIBUÍDO SOB A LICENÇA CREATIVE COMMONS: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA)
+# DISTRIBUÍDO SOB A LICENÇA CREATIVE COMMONS: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA)
 
 Esta licença permite que outros remixem, adaptem e criem a partir do trabalho original para fins não comerciais, desde que atribuam
 ao CRIADOR o devido crédito (banner original e Copyright), e que licenciem as novas criações sob os MESMOS termos. Este programa é 
@@ -11,7 +11,7 @@ APLICAÇÃO EM PARTICULAR.
  
 #################################################################################################################################
  
- Contato:
+# Contato:
  
  Site: http://www.bktech.com.br
  E-mail: plutarco@bktech.com.br
