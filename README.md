@@ -1,6 +1,6 @@
 PLUTARCO - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
  
-################################# Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> ########################
+Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
 
 DISTRIBUÍDO SOB A LICENÇA CREATIVE COMMONS: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA)
 
@@ -34,8 +34,7 @@ Changelog: Criação do arquivo (Fabio Soares Schmidt)
 
  Essa ferramenta foi criada visando facilitar o processo de migração entre ambientes Zimbra, independentemente de qual versão
  ou edição esteja sendo utilizada ****. Motivada pelos desafios encontrados em migrações efetuadas pela BKTECH (parceiro oficial Zimbra para negócios
- e treinamentos), além da participação em comunidades do Zimbra, a ferramenta visa, no decorrer de sua evolução, atender os mais diversos cenários, 
- contemplando também a migração de outras plataformas, livres ou proprietárias.
+ e treinamentos), além da participação em comunidades do Zimbra, a ferramenta visa, no decorrer de sua evolução, atender os mais diversos cenários, contemplando também a migração de outras plataformas, livres e proprietárias.
  
  *** Em casos de Upgrade, isto é, migar PARA uma versão mais nova do Zimbra. Não é garantido o funcionamento em casos de downgrade.
  
