@@ -13,12 +13,14 @@ APLICAÇÃO EM PARTICULAR.
  
 # Contato:
  
- Site: http://www.bktech.com.br
- E-mail: plutarco@bktech.com.br
+ Site: <http://www.bktech.com.br>
+ E-mail: <plutarco@bktech.com.br>
+ 
+ Desenvolvedor: Fabio Soares Schmidt <fabio@respirandolinux.com.br> ou <https://respirandolinux.com.br>
 
 #################################################################################################################################
 										
-			README - v0.9.8
+[README - v0.9.8]
 												
 Changelog: 
 21/11/2016- Criação do arquivo (Fabio Soares Schmidt)
