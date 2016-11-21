@@ -44,6 +44,8 @@ Changelog:
  *** Em casos de Upgrade, isto é, migar PARA uma versão mais nova do Zimbra. Não é garantido o funcionamento em casos de downgrade.
  
 Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo, exportando as classes de serviço, contas, nomes alternativos e listas de distribuição. Nesta primeira versão (0.9.8), PLUTARCO facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox.
+
+# ROADMAP
  
 Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server, além da exportação das principais configurações do ambiente Zimbra.
 
