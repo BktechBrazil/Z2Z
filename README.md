@@ -33,6 +33,8 @@ Changelog:
   
 # PLUTARCO
 
+![alt tag](https://respirandolinux.files.wordpress.com/2016/11/plutarco_home.jpg)
+
  Essa ferramenta foi criada visando facilitar o processo de migração entre ambientes Zimbra, independentemente de qual versão
  ou edição esteja sendo utilizada ****. Motivada pelos desafios encontrados em migrações efetuadas pela BKTECH (parceiro oficial Zimbra para negócios
  e treinamentos), além da participação em comunidades do Zimbra, a ferramenta visa, no decorrer de sua evolução, atender os mais diversos cenários, contemplando também a migração de outras plataformas, livres e proprietárias.
