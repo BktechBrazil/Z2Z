@@ -31,7 +31,7 @@ o programa irá verificar suas depedências (comandos) e confirmar se o administ
 
  ***** UTILIZAÇÃO  ******
 
- 1. Exportação 
+# 1. Exportação 
  
 O programa PLUTARCO deve ser executado com o usuário Zimbra no servidor de origem da migração. Uma vez confirmada a execução, o programa irá
 efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação
@@ -54,7 +54,7 @@ que inclui:
 Para evitar o export de conteúdo desnecessário, são criados dois arquivos de lote separados dentro do diretório export para as pastas LIXEIRA e SPAM, sendo
 opcional ao administrador exportar e/ou importar estes conteúdos.
 
- 2. Importação
+# 2. Importação
  
 Para importação, o diretório "export" do PLUTARCO, que foi criado no servidor de origem, deverá ser copiado integralmente para o novo servidor. Todo o
 procedimento de importação também será executado com o usuário Zimbra no novo servidor.
