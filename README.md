@@ -20,7 +20,8 @@ APLICAÇÃO EM PARTICULAR.
 										
 			README - v0.9.8
 												
-Changelog: Criação do arquivo (Fabio Soares Schmidt)
+Changelog: 
+21/11/2016- Criação do arquivo (Fabio Soares Schmidt)
 
 # INSTALAÇÃO
  
