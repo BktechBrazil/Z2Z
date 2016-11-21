@@ -1,0 +1,72 @@
+ ____  _    _            _
+ | __ )| | _| |_ ___  ___| |__
+ |  _ \| |/ / __/ _ \/ __| '_ \
+ | |_) |   <| ||  __/ (__| | | |
+ |____/|_|\_\\__\___|\___|_| |_|  PLUTARCO - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
+ 
+################################# Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> ########################
+
+DISTRIBUÍDO SOB A LICENÇA CREATIVE COMMONS: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA)
+
+Esta licença permite que outros remixem, adaptem e criem a partir do trabalho original para fins não comerciais, desde que atribuam
+ao CRIADOR o devido crédito (banner original e Copyright), e que licenciem as novas criações sob os MESMOS termos. Este programa é 
+distribuído na esperança de que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implícita de ADEQUAÇÃO a qualquer MERCADO ou 
+APLICAÇÃO EM PARTICULAR.
+ 
+#################################################################################################################################
+ 
+ Contato:
+ 
+ Site: http://www.bktech.com.br
+ E-mail: plutarco@bktech.com.br
+
+#################################################################################################################################
+
+ *****  INSTALAÇÃO ******
+ 
+Por ser tratar de um programa em shell, a ferramenta PLUTARCO não exige instalação, bastando extrair o seu conteúdo e executar 
+o comando ./plutarco.sh para iniciar o procedimento de migração.
+
+o programa irá verificar suas depedências (comandos) e confirmar se o administrador deseja executar antes de iniciar a execução das rotinas de exportação.
+
+ ***** UTILIZAÇÃO  ******
+
+ 1. Exportação 
+ 
+O programa PLUTARCO deve ser executado com o usuário Zimbra no servidor de origem da migração. Uma vez confirmada a execução, o programa irá
+efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação
+de todas informações da conta, incluindo a senha (caso não esteja sendo utilizada autenticação externa).
+
+O programa também irá permitir, no momento da operação de exportação das informações, que se modifique o hostname do servidor Zimbra, para cenários
+onde o hostname dos servidores de origem e destino sejam diferentes.
+
+Neste primeiro momento, o programa não EXECUTA o export das caixas postais (conteúdo), sendo gerados os arquivos de lote dentro do diretório export. 
+Isso permite que o administrador execute o export de acordo com a estratégia que desejar seguir para a migração, dividindo as contas para execuções em paralelo,
+por exemplo. O arquivo de lote é gerado com a execução do comando nativo do zimbra "zmmailbox", que irá permitir a exportação e importação das caixas postais,
+que inclui:
+
+ - E-mail (preservando a hierarquia de pastas e todos os marcadores das mensagens)
+ - Agenda,
+ - Porta Arquivos
+ - Tarefas
+ - Preferências
+
+Para evitar o export de conteúdo desnecessário, são criados dois arquivos de lote separados dentro do diretório export para as pastas LIXEIRA e SPAM, sendo
+opcional ao administrador exportar e/ou importar estes conteúdos.
+
+ 2. Importação
+ 
+Para importação, o diretório "export" do PLUTARCO, que foi criado no servidor de origem, deverá ser copiado integralmente para o novo servidor. Todo o
+procedimento de importação também será executado com o usuário Zimbra no novo servidor.
+
+Nesta versão (0.9.8) não estão sendo tratadas as configurações do ambiente, que precisam ser mapeadas e configuradas manualmente. Antes de iniciar o processo
+de import o administrador deverá criar todos os domínios do ambiente.
+
+Primeiramente, deve ser efetuada a importação dos registros do LDAP, o script "import.sh" irá efetuar as verificações necessárias e executar a importação na 
+ordem correta. 
+
+A importação das caixas postais deve ser efetuada posteriormente, executando o script "script_import_FULL.sh" ou conforme a estratégia definida. Caso tenha sido
+efetuada a exportação das pastas SPAM e/ou LIXEIRA, os scripts "script_import_Trash.sh" e "script_import_Junk.sh" devem ser executados ***.
+
+*** A importação das pastas SPAM e/ou LIXEIRA deve ser executada APÓS a importação da caixa principal. Para a caixa principal, é utilizado o método
+*** reset, que remove todo qualquer conteúdo anterior na caixa postal.
