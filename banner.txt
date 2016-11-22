@@ -24,7 +24,7 @@
  - Irá criar o arquivo "importar_LDAP.sh" com o processo para importação das entradas do LDAP
     -  (Necessário apenas criar manualmente o(s) domínio(s) no novo ambiente)
  - Irá criar o arquivo "importar_MAILBOX.sh" para importação dos arquivos exportados
- * Exclusivamente para ambientes multi-server
+ * Exclusivamente para ambientes Single-Server
  * Não efetua o export das configurações do ambiente (necessário configurar manualmente no novo servidor)
  
  #################################################################################################################################
