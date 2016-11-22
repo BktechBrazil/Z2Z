@@ -14,7 +14,7 @@ APLICAÇÃO EM PARTICULAR.
 # Contato:
  
  Site: <http://www.bktech.com.br>
- E-mail: <plutarco@bktech.com.br>
+ E-mail: <Z2Z@bktech.com.br>
  
  Desenvolvedor: Fabio Soares Schmidt <fabio@respirandolinux.com.br> ou <https://respirandolinux.com.br>
 
@@ -43,7 +43,7 @@ Changelog:
  
  *** Em casos de Upgrade, isto é, migar PARA uma versão mais nova do Zimbra. Não é garantido o funcionamento em casos de downgrade.
  
-Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo, exportando as classes de serviço, contas, nomes alternativos e listas de distribuição. Nesta primeira versão (0.9.8), PLUTARCO facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox.
+Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo, exportando as classes de serviço, contas, nomes alternativos e listas de distribuição. Nesta primeira versão (0.9.8), Z2Z facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox.
 
 # ROADMAP
  
