@@ -1,4 +1,4 @@
-# PLUTARCO - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
+# Z2Z (Zimbra2Zimbra Migration Tool) - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
  
 # Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
 
@@ -33,7 +33,7 @@ Changelog:
  
  (FAVOR LER O ARQUIVO INSTALL)
   
-# PLUTARCO
+# Z2Z
 
 ![alt tag](https://respirandolinux.files.wordpress.com/2016/11/plutarco_home.jpg)
 
