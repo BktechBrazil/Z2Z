@@ -98,6 +98,7 @@ Clear_Workdir
 #COPIA SCRIPT DE IMPORTACAO E BANNER SIMPLES 
 cp skell/importar_ldap.sh export/
 cp skell/banner_simples.txt export/
+chmod +x export/importar_ldap.sh
 
 #INTERATIVIDADE: ALTERAR HOSTNAME DO SERVIDOR
 Replace_Hostname
