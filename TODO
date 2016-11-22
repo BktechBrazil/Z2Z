@@ -1,0 +1,3 @@
+- Confirmar se o novo nome do servidor, caso o hostname seja modificado, seja um FQDN; via <eduardo@bktech.com.br>
+- Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
+- Incrementar a documentação.
