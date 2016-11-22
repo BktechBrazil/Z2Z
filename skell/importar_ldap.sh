@@ -1,7 +1,7 @@
 #/bin/bash
-#SCRIPT PARA IMPORTAR COS, CONTAS, NOMES ALTERNATIVOS E LISTAS DE DISTRIBUICAO DO ZIMBRA
-#FABIO S. SCHMIDT - fabio_schmidt@hotmail.com - 02/04/2015
-#TODO:
+###   Z2Z - Mantido por BKTECH <http://www.bktech.com.br>                         ###
+###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
+###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
 
 #FUNCOES E VARIAVEIS PARA O UTILITARIO
