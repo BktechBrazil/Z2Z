@@ -1,5 +1,5 @@
 #!/bin/bash
-###   PLUTARCO - Mantido por BKTECH <http://www.bktech.com.br>                    ###
+###   Z2Z - Mantido por BKTECH <http://www.bktech.com.br>                         ###
 ###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
 ###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
@@ -8,7 +8,7 @@
 #CARREGA FUNCOES UTILIZADAS PELO SCRIPT
 . func.sh
  
-#INICIAR PLUTARCO
+#INICIAR Z2Z
 clear
 cat banner.txt
 echo ""
