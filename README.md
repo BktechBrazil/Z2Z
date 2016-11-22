@@ -35,7 +35,7 @@ Changelog:
   
 # Z2Z
 
-![alt tag](https://respirandolinux.files.wordpress.com/2016/11/plutarco_home.jpg)
+![alt tag](https://respirandolinux.files.wordpress.com/2016/11/zimbrazimbraz2zz2z-master.jpg)
 
  Essa ferramenta foi criada visando facilitar o processo de migração entre ambientes Zimbra, independentemente de qual versão
  ou edição esteja sendo utilizada ****. Motivada pelos desafios encontrados em migrações efetuadas pela BKTECH (parceiro oficial Zimbra para negócios
