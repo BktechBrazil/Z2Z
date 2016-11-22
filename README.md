@@ -14,7 +14,7 @@ APLICAÇÃO EM PARTICULAR.
 # Contato:
  
  Site: <http://www.bktech.com.br>
- E-mail: <Z2Z@bktech.com.br>
+ E-mail: <z2z@bktech.com.br>
  
  Desenvolvedor: Fabio Soares Schmidt <fabio@respirandolinux.com.br> ou <https://respirandolinux.com.br>
 
