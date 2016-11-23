@@ -10,6 +10,8 @@ ERROR_TEXT="printf \e[1;31m%s\e[0m\n" #Vermelho
 INFO_TEXT="printf \e[1;33m%s\e[0m\n" #Amarelo
 CHOICE_TEXT="printf \e[1;32m%s\e[0m\n" #Verde
 NO_COLOUR="printf \e[0m" #Branco
+DEFAULTCOS_DN="cn=default,cn=cos,cn=zimbra"
+DEFAULTEXTERNALCOS_DN="cn=defaultExternal,cn=cos,cn=zimbra"
 
 
 #CONFIRMA SE ESTA SENDO EXECUTADO COM O USUARIO ZIMBRA
@@ -66,6 +68,13 @@ zmsetvars
 
 
 #INICIA IMPORTACAO DAS CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS DE DISTRIBUICAO
+## REMOVE AS CLASSES DE SERVICO PADRAO DO ZIMBRA: DEFAULT E ZIMBRADEFAULT
+$INFO_TEXT "Removendo classes de servico padrao: Default e DefaultExternal"
+ldapdelete -r -x -H ldap://`zmhostname` -D "uid=zimbra,cn=admins,cn=zimbra" -c -w $zimbra_ldap_password $DEFAULTCOS_DN
+ldapdelete -r -x -H ldap://`zmhostname` -D "uid=zimbra,cn=admins,cn=zimbra" -c -w $zimbra_ldap_password $DEFAULTEXTERNALCOS_DN
+
+## IMPORTACAO
+
 ldapadd -c -x -H ldap://`zmhostname` -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -f COS.ldif
 
 ldapadd -c -x -H ldap://`zmhostname` -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -f CONTAS.ldif
