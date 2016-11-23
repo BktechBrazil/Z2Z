@@ -1,4 +1,4 @@
-# Z2Z (Zimbra2Zimbra Migration Tool) - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
+# Z2Z (Zimbra2Zimbra Migration Tool) - Versão 0.9.9 - Mantido por BKTECH <http://www.bktech.com.br>
  
 # Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
 
@@ -20,10 +20,11 @@ APLICAÇÃO EM PARTICULAR.
 
 #################################################################################################################################
 										
-[README - v0.9.8]
+[README - v0.9.9]
 												
 Changelog: 
 21/11/2016- Criação do arquivo (Fabio Soares Schmidt)
+23/11/2016- Ler arquivo CHANGELOG
 
 # INSTALAÇÃO
  
@@ -51,7 +52,7 @@ Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Ser
 
 Também está no plano de evolução da mesma, o tratamento de diferentes estratégias de migração, permitindo migrações gradativas, por exemplo, através  de processos de export e import incrementais. 
  
-Esta primeira versão (0.9.8), é considerada BETA e conta com a colaboração da comunidade para testes, críticas, sugestões e traduções para que possa ser lançada como versão estável.
+Esta primeira versão (0.9), é considerada BETA e conta com a colaboração da comunidade para testes, críticas, sugestões e traduções para que possa ser lançada como versão estável.
  
 TODA avaliação e contribução (codificação) é muito bem-vinda !
  
