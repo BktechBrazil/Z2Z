@@ -2,7 +2,7 @@
  | __ )| | _| |_ ___  ___| |__
  |  _ \| |/ / __/ _ \/ __| '_ \
  | |_) |   <| ||  __/ (__| | | |
- |____/|_|\_\\__\___|\___|_| |_|  Z2Z - Versão 0.9.8 - Mantido por BKTECH <http://www.bktech.com.br>
+ |____/|_|\_\\__\___|\___|_| |_|  Z2Z - Versão 0.9.9 - Mantido por BKTECH <http://www.bktech.com.br>
  
 ################################# Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> ########################
 
@@ -56,7 +56,7 @@ opcional ao administrador exportar e/ou importar estes conteúdos.
  
 Para importação, o diretório "export" do Z2Z, que foi criado no servidor de origem, deverá ser copiado integralmente para o novo servidor. Todo o procedimento de importação também será executado com o usuário Zimbra no novo servidor.
 
-Nesta versão (0.9.8) não estão sendo tratadas as configurações do ambiente, que precisam ser mapeadas e configuradas manualmente. Antes de iniciar o processo de import o administrador deverá criar todos os domínios do ambiente.
+Nesta versão (0.9) não estão sendo tratadas as configurações do ambiente, que precisam ser mapeadas e configuradas manualmente. Antes de iniciar o processo de import o administrador deverá criar todos os domínios do ambiente.
 
 Primeiramente, deve ser efetuada a importação dos registros do LDAP, o script "import.sh" irá efetuar as verificações necessárias e executar a importação na ordem correta. 
 
