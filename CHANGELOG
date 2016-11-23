@@ -1,0 +1,6 @@
+CHANGELOG
+
+### 0.9.9 ###
+
+- Viabiliza a importação das classes de serviço padrão (Default e DefaultExternal), removendo as entradas no LDAP ao importar para adicionar
+as entradas exportadas.
