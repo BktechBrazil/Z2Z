@@ -1,4 +1,5 @@
 - Confirmar se o novo nome do servidor, caso o hostname seja modificado, seja um FQDN; via <eduardo@bktech.com.br>
 - Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
+- Viabilizar o export das COS 'default' e 'defaultExternal', removendo ao importar e adicionando novamente com os dados exportados;
 - Implementar migração dos domínios e apelidos;
 - Incrementar a documentação.
