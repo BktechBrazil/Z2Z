@@ -4,3 +4,4 @@ CHANGELOG
 
 - Viabiliza a importação das classes de serviço padrão (Default e DefaultExternal), removendo as entradas no LDAP ao importar para adicionar
 as entradas exportadas.
+- Exclui da exportação das contas de serviço do Zimbra, evitando impacto nas configurações do novo ambiente.
