@@ -2,7 +2,7 @@
  | __ )| | _| |_ ___  ___| |__
  |  _ \| |/ / __/ _ \/ __| '_ \
  | |_) |   <| ||  __/ (__| | | |
- |____/|_|\_\\__\___|\___|_| |_|  Z2Z - Versão 0.9.9 - Mantido por BKTECH <http://www.bktech.com.br>
+ |____/|_|\_\\__\___|\___|_| |_|  Z2Z - Versão 0.9.9b - Mantido por BKTECH <http://www.bktech.com.br>
  
 ################################# Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> ########################
 
@@ -24,10 +24,9 @@ APLICAÇÃO EM PARTICULAR.
 
  *****  INSTALAÇÃO ******
  
-Por ser tratar de um programa em shell, a ferramenta Z2Z não exige instalação, bastando extrair o seu conteúdo e executar 
-o comando ./z2z.sh para iniciar o procedimento de migração.
+Por ser tratar de um programa em shell, a ferramenta Z2Z não exige instalação, bastando extrair o seu conteúdo, concedir permissão e executar o comando ./z2z.sh para iniciar o procedimento de migração.
 
-o programa irá verificar suas depedências (comandos) e confirmar se o administrador deseja executar antes de iniciar a execução das rotinas de exportação.
+o programa irá verificar suas depedências e confirmar se o administrador deseja executar antes de iniciar a execução das rotinas de exportação.
 
  ***** UTILIZAÇÃO  ******
 
@@ -37,8 +36,15 @@ O programa Z2Z deve ser executado com o usuário Zimbra no servidor de origem da
 efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação
 de todas informações da conta, incluindo a senha (caso não esteja sendo utilizada autenticação externa).
 
-O programa também irá permitir, no momento da operação de exportação das informações, que se modifique o hostname do servidor Zimbra, para cenários
-onde o hostname dos servidores de origem e destino sejam diferentes.
+Durante a exportação das contas, são excluídas da relação as contas de serviço do Zimbra, evitando qualquer impacto sobre o novo ambiente, por exemplo:
+
+ - Conta para SPAM
+ - Conta não NÃO-SPAM (HAM)
+ - Conta para QUARENTENA de vírus
+ - Conta para GALSYNC
+ - Contas de serviço
+
+O programa também irá permitir, no momento da operação de exportação das informações, que se modifique o hostname do servidor Zimbra, para cenários onde o hostname dos servidores de origem e destino sejam diferentes.
 
 Neste primeiro momento, o programa não EXECUTA o export das caixas postais (conteúdo), sendo gerados os arquivos de lote dentro do diretório export. 
 Isso permite que o administrador execute o export de acordo com a estratégia que desejar seguir para a migração, dividindo as contas para execuções em paralelo,por exemplo. O arquivo de lote é gerado com a execução do comando nativo do zimbra "zmmailbox", que irá permitir a exportação e importação das caixas postais, que inclui:
@@ -49,8 +55,7 @@ Isso permite que o administrador execute o export de acordo com a estratégia qu
  - Tarefas
  - Preferências
 
-Para evitar o export de conteúdo desnecessário, são criados dois arquivos de lote separados dentro do diretório export para as pastas LIXEIRA e SPAM, sendo
-opcional ao administrador exportar e/ou importar estes conteúdos.
+Para evitar o export de conteúdo desnecessário, são criados dois arquivos de lote separados dentro do diretório export para as pastas LIXEIRA e SPAM, sendo opcional ao administrador exportar e/ou importar estes conteúdos.
 
 # 2. Importação
  
