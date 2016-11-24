@@ -2,4 +2,6 @@
 - Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
 - Implementar migração dos domínios e apelidos;
 - Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE);
+- Tratar parametros: zimbraAmavisQuarantineAccount, zimbraBackupReportEmailRecipients, zimbraBackupReportEmailSender, zimbraDefaultDomainName,
+zimbraSpamIsNotSpamAccount, zimbraSpamIsSpamAccount, zimbraVersionCheckNotificationEmail, zimbraVersionCheckNotificationEmailFrom
 - Incrementar a documentação.
