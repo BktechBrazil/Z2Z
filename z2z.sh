@@ -63,10 +63,10 @@ mkdir $WORKDIR/alias #Cria diretorio temporario para exportar os nomes alternati
  $INFO_TEXT "CLASSES DE SERVICO EXPORTADAS COM SUCESSO: $DESTINO/COS.ldif"
  separator_char
  
- #EXPORTANDO CONTAS
+ #EXPORTANDO CONTAS - DESCONSIDERANDO CONTAS DE SERVICO DO ZIMBRA (zimbraIsSystemResource=TRUE)
  $NORMAL_TEXT  "EXPORTANDO CONTAS"
  separator_char
- ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password -b '' -LLL "(objectclass=zimbraAccount)" > $DESTINO/CONTAS.ldif
+ ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password -b '' -LLL '(&(!(zimbraIsSystemResource=TRUE))(objectClass=zimbraAccount))' > $DESTINO/CONTAS.ldif
  $INFO_TEXT "CONTAS EXPORTADAS COM SUCESSO: $DESTINO/CONTAS.ldif"
  separator_char
  
