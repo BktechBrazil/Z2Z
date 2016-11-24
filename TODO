@@ -3,5 +3,5 @@
 - Implementar migração dos domínios e apelidos;
 - Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE);
 - Tratar parametros: zimbraAmavisQuarantineAccount, zimbraBackupReportEmailRecipients, zimbraBackupReportEmailSender, zimbraDefaultDomainName,
-zimbraSpamIsNotSpamAccount, zimbraSpamIsSpamAccount, zimbraVersionCheckNotificationEmail, zimbraVersionCheckNotificationEmailFrom
+zimbraSpamIsNotSpamAccount, zimbraSpamIsSpamAccount, zimbraVersionCheckNotificationEmail, zimbraVersionCheckNotificationEmailFrom, galsync
 - Incrementar a documentação.
