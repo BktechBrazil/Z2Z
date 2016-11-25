@@ -24,7 +24,7 @@ APLICAÇÃO EM PARTICULAR.
 
  *****  INSTALAÇÃO ******
  
-Por ser tratar de um programa em shell, a ferramenta Z2Z não exige instalação, bastando extrair o seu conteúdo, concedir permissão e executar o comando ./z2z.sh para iniciar o procedimento de migração.
+Por ser tratar de um programa em shell, a ferramenta Z2Z não exige instalação, bastando extrair o seu conteúdo, conceder permissão e executar o comando ./z2z.sh para iniciar o procedimento de migração.
 
 o programa irá verificar suas depedências e confirmar se o administrador deseja executar antes de iniciar a execução das rotinas de exportação.
 
@@ -33,8 +33,7 @@ o programa irá verificar suas depedências e confirmar se o administrador desej
 # 1. Exportação 
  
 O programa Z2Z deve ser executado com o usuário Zimbra no servidor de origem da migração. Uma vez confirmada a execução, o programa irá
-efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação
-de todas informações da conta, incluindo a senha (caso não esteja sendo utilizada autenticação externa).
+efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação de todas informações da conta, incluindo a senha (caso não esteja sendo utilizada autenticação externa).
 
 Durante a exportação das contas, são excluídas da relação as contas de serviço do Zimbra, evitando qualquer impacto sobre o novo ambiente, por exemplo:
 
