@@ -6,4 +6,5 @@
 - Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE);
 - Tratar parametros: zimbraAmavisQuarantineAccount, zimbraBackupReportEmailRecipients, zimbraBackupReportEmailSender, zimbraDefaultDomainName,
 zimbraSpamIsNotSpamAccount, zimbraSpamIsSpamAccount, zimbraVersionCheckNotificationEmail, zimbraVersionCheckNotificationEmailFrom, galsync
-- Incrementar a documentação.
+- Incrementar a documentação;
+- Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas.
