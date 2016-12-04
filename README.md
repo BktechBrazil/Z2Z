@@ -54,6 +54,6 @@ Também está no plano de evolução da mesma, o tratamento de diferentes estrat
  
 Esta primeira versão (0.9), é considerada **BETA** e conta com a colaboração da comunidade para testes, críticas, sugestões e traduções para que possa ser lançada como versão estável.
  
-**TODA avaliação e contribuição _(codificação)_ é muito bem-vinda !**
+**TODA avaliação e contribuição _(codificação,testes,críticas,sugestões)_ é muito bem-vinda !**
  
 Obrigado desde já pela atenção.
