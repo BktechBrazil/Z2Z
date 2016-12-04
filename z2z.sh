@@ -3,7 +3,7 @@
 ###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
 ###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
-#VERSAO 0.9.9 (23/11/2016)
+#VERSAO 0.9.9f (04/12/2016)
 
 #CARREGA FUNCOES UTILIZADAS PELO SCRIPT
 . func.sh
@@ -25,7 +25,7 @@ separator_char
 #TESTES PARA EXECUCAO DO UTILITARIO
 
 #COMANDOS NECESSARIOS
-declare -a COMANDOS=('ldapsearch' 'zmmailbox' 'zmhostname' 'zmshutil');
+declare -a COMANDOS=('ldapsearch' 'zmmailbox' 'zmshutil');
 
 Check_Command
 separator_char
@@ -36,10 +36,10 @@ source ~/bin/zmshutil
 zmsetvars
 
 
-#DEFININDO NOME DO SERVIDOR COM ZMHOSTNAME
-ZIMBRA_HOSTNAME=`zmhostname`
-#DEFININDO USUARIO PARA BIND NO LDAP DO ZIMBRA
-ZIMBRA_BINDDN="uid=zimbra,cn=admins,cn=zimbra"
+#DEFININDO NOME DO SERVIDOR COM VARIAVEL DO AMBIENTE
+ZIMBRA_HOSTNAME=$zimbra_server_hostname
+#DEFININDO USUARIO PARA BIND NO LDAP DO ZIMBRA COM VARIAVEL DO AMBIENE
+ZIMBRA_BINDDN=$zimbra_ldap_userdn
 
 
 ####DIRETORIOS
@@ -88,7 +88,7 @@ mkdir $WORKDIR/alias #Cria diretorio temporario para exportar os nomes alternati
 #EXPORTANDO LISTAS DE DISTRIBUICAO
    $NORMAL_TEXT  "EXPORTANDO LISTAS DE DISTRIBUICAO"
    separator_char
-ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -b '' -LLL "(objectclass=zimbraDistributionList)" > $DESTINO/LISTAS.ldif
+ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password -b '' -LLL "(objectclass=zimbraDistributionList)" > $DESTINO/LISTAS.ldif
    $INFO_TEXT "LISTAS DE DISTRIBUICAO EXPORTADAS COM SUCESSO: $DESTINO/LISTAS.ldif"
    separator_char
 
