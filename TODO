@@ -5,6 +5,7 @@ TODO:
 - Implementar migração dos domínios e apelidos; 
 - Incrementar a documentação;
 - Permitir filtro para exportar contas: todas, somente ativas, etc...;
+- Permitir migração de configuração de autenticação externa e/ou GAL (testar zimbraAuthMech);
 - Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas.
 
 DONE:
