@@ -34,12 +34,11 @@ o programa irá verificar suas depedências e confirmar se o administrador desej
  
 O programa Z2Z deve ser executado com o usuário Zimbra no servidor de origem da migração. Uma vez confirmada a execução, o programa irá
 efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação de todas informações da conta, incluindo a senha (caso não esteja sendo utilizada autenticação externa).
+*** O administrador poderá escolher se deseja importar a conta ADMIN
 
 Durante a exportação das contas***, são excluídas da relação as contas de serviço do Zimbra, evitando qualquer impacto sobre o novo ambiente, por exemplo:
 
-*** O administrador poderá escolher se deseja importar a conta ADMIN
-
- - Conta para SPAM
+- Conta para SPAM
  - Conta não NÃO-SPAM (HAM)
  - Conta para QUARENTENA de vírus
  - Conta para GALSYNC
@@ -51,7 +50,7 @@ Neste primeiro momento, o programa não EXECUTA o export das caixas postais (con
 Isso permite que o administrador execute o export de acordo com a estratégia que desejar seguir para a migração, dividindo as contas para execuções em paralelo,por exemplo. O arquivo de lote é gerado com a execução do comando nativo do zimbra "zmmailbox", que irá permitir a exportação e importação das caixas postais, que inclui:
 
  - E-mail (preservando a hierarquia de pastas e todos os marcadores das mensagens)
- - Agenda,
+ - Agenda
  - Porta Arquivos
  - Tarefas
  - Preferências
@@ -62,11 +61,10 @@ Para evitar o export de conteúdo desnecessário, são criados dois arquivos de 
  
 Para importação, o diretório "export" do Z2Z, que foi criado no servidor de origem, deverá ser copiado integralmente para o novo servidor. Todo o procedimento de importação também será executado com o usuário Zimbra no novo servidor.
 
-Nesta versão (0.9) não estão sendo tratadas as configurações do ambiente, que precisam ser mapeadas e configuradas manualmente. Antes de iniciar o processo de import o administrador deverá criar todos os domínios do ambiente.
+Nesta versão (0.9) não estão sendo tratadas as configurações do ambiente, que precisam ser mapeadas e configuradas manualmente. ANTES de iniciar o processo de import o administrador DEVERÁ CRIAR TODOS OS DOMÍNIOS DO AMBIENTE.
 
-Primeiramente, deve ser efetuada a importação dos registros do LDAP, o script "import.sh" irá efetuar as verificações necessárias e executar a importação na ordem correta. 
+Primeiramente, deve ser efetuada a importação dos registros do LDAP, o script "importar_ldap.sh" irá efetuar as verificações necessárias e executar a importação na ordem correta. 
 
 A importação das caixas postais deve ser efetuada posteriormente, executando o script "script_import_FULL.sh" ou conforme a estratégia definida. Caso tenha sido efetuada a exportação das pastas SPAM e/ou LIXEIRA, os scripts "script_import_Trash.sh" e "script_import_Junk.sh" devem ser executados ***.
 
-*** A importação das pastas SPAM e/ou LIXEIRA deve ser executada APÓS a importação da caixa principal. Para a caixa principal, é utilizado o método
-*** reset, que remove todo qualquer conteúdo anterior na caixa postal.
+*** A importação das pastas SPAM e/ou LIXEIRA deve ser executada APÓS a importação da caixa principal. Para a caixa principal, é utilizado o método reset, que remove todo qualquer conteúdo anterior na caixa postal.
