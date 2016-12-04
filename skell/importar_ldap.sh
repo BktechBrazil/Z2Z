@@ -13,7 +13,6 @@ NO_COLOUR="printf \e[0m" #Branco
 DEFAULTCOS_DN="cn=default,cn=cos,cn=zimbra"
 DEFAULTEXTERNALCOS_DN="cn=defaultExternal,cn=cos,cn=zimbra"
 
-
 #CONFIRMA SE ESTA SENDO EXECUTADO COM O USUARIO ZIMBRA
 if [ "$(whoami)" != "zimbra" ]; then
     $ERROR_TEXT "Esse comando deve ser executado como Zimbra."
@@ -27,7 +26,7 @@ for i in "${ARQUIVOS_IMPORT[@]}"
     do
     if [ -r $i ]
       then
-	  echo "Arquivo $i encontrado"
+	  $INFO_TEXT "OK: Arquivo $i encontrado"
 	  else
       $ERROR_TEXT  "Arquivo $i nao encontrado ou sem permissao de leitura."
       exit 1
@@ -37,7 +36,7 @@ done
 
 
 #COMANDOS NECESSARIOS PARA A EXECUCAO
-declare -a COMANDOS=('test' 'ldapsearch' 'zmhostname' 'zmshutil');
+declare -a COMANDOS=('test' 'ldapsearch' 'zmhostname' 'zmshutil' 'zmmailbox');
 
 for i in "${COMANDOS[@]}"
     do
@@ -52,33 +51,55 @@ done
 clear
 cat banner_simples.txt #Exibir Banner
 
-#INTERATIVIDADE: execucao da importacao
-echo ""
-read -p "Deseja iniciar a importacao das CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS E DISTRIBUICAO (sim/nao)?" choice
-    case "$choice" in
-     y|Y|yes|s|S|sim ) $NORMAL_TEXT "Iniciando utilitario";;
-     n|N|no|nao ) exit 0;;
-     * ) test_exec ;;
-esac
-
 
 #DEFININDO VARIAVEIS DE AMBIENTE DO ZIMBRA
 source ~/bin/zmshutil
 zmsetvars
+ZIMBRAADMIN_DN=`ldapsearch -x -H ldap://\`zmhostname\` -D $zimbra_ldap_userdn -w $zimbra_ldap_password -b '' -LLL uid=admin dn | awk '{print $2}'` #OBTER DN DO ADMIN
 
+#INTERATIVIDADE: execucao da importacao
+test_exec()
+{
+echo ""
+read -p "Deseja iniciar a importacao das CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS E DISTRIBUICAO (sim/nao)?" choice
+    case "$choice" in
+     y|Y|yes|s|S|sim ) $NORMAL_TEXT "Iniciando Z2Z";;
+     n|N|no|nao ) exit 0;;
+	 * ) test_exec ;;
+     esac
+}
+test_exec #executa a funcao test_exec
+
+
+#INTERATIVIDADE: importacao do usuario admin
+test_importadmin()
+{
+echo ""
+read -p "Deseja importar o usuario ADMIN (sim/nao)?" choice
+    case "$choice" in
+	  y|Y|yes|s|S|sim ) 
+	               $NORMAL_TEXT "Removendo ADMIN: $ZIMBRAADMIN_DN" 
+				   ldapdelete -r -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $ZIMBRAADMIN_DN
+				   ;;
+	  n|N|no|nao ) $INFO_TEXT "O usuario admin nao sera importado";;
+	  * ) test_importadmin ;;
+esac
+}
+
+test_importadmin #executa a funcao test_importadmin
 
 #INICIA IMPORTACAO DAS CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS DE DISTRIBUICAO
 ## REMOVE AS CLASSES DE SERVICO PADRAO DO ZIMBRA: DEFAULT E ZIMBRADEFAULT
 $INFO_TEXT "Removendo classes de servico padrao: Default e DefaultExternal"
-ldapdelete -r -x -H ldap://`zmhostname` -D "uid=zimbra,cn=admins,cn=zimbra" -c -w $zimbra_ldap_password $DEFAULTCOS_DN
-ldapdelete -r -x -H ldap://`zmhostname` -D "uid=zimbra,cn=admins,cn=zimbra" -c -w $zimbra_ldap_password $DEFAULTEXTERNALCOS_DN
+ldapdelete -r -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $DEFAULTCOS_DN
+ldapdelete -r -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $DEFAULTEXTERNALCOS_DN
 
-## IMPORTACAO
+## IMPORTACAO DAS COS, CONTAS, APELIDOS E LISTAS
 
-ldapadd -c -x -H ldap://`zmhostname` -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -f COS.ldif
+ldapadd -c -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f COS.ldif
 
-ldapadd -c -x -H ldap://`zmhostname` -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -f CONTAS.ldif
+ldapadd -c -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f CONTAS.ldif
 
-ldapadd -c -x -H ldap://`zmhostname` -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -f APELIDOS.ldif
+ldapadd -c -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f APELIDOS.ldif
 
-ldapadd -c -x -H ldap://`zmhostname` -D uid=zimbra,cn=admins,cn=zimbra -w $zimbra_ldap_password -f LISTAS.ldif
+ldapadd -c -x -H ldap://`zmhostname` -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f LISTAS.ldif
