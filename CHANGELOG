@@ -1,5 +1,12 @@
 CHANGELOG
 
+### 0.9.9f ###
+#
+- Caso seja modificado o hostname do servidor, confirma se a entrada corresponde a um FQDN valido
+- Durante a importacao, confirma se hostname do servidor corresponde ao valor nos arquivos para importacao
+- Corrigidos erros em algumas funcoes 
+- Melhorias no codigo utilizando variaveis do ambiente Zimbra
+
 ### 0.9.9c ###
 
 - Viabiliza a importacao do usuario ADMIN, permitindo ao administrador decidir pela importação ou não.
@@ -10,4 +17,3 @@ CHANGELOG
 - Viabiliza a importação das classes de serviço padrão (Default e DefaultExternal), removendo as entradas no LDAP ao importar para adicionar
 as entradas exportadas.
 - Exclui da exportação das contas de serviço do Zimbra, evitando impacto nas configurações do novo ambiente.
-
