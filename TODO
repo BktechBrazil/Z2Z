@@ -1,10 +1,15 @@
-- Confirmar se o novo nome do servidor, caso o hostname seja modificado, seja um FQDN; via <eduardo@bktech.com.br>
-- Confirmar se o nome do novo servidor (zmhostname) corresponde ao nome das entradas LDAP;
+TODO:
+
 - Criar controle de sessões de exportação;
 - Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
-- Tratar conta do admin (opção) - apelidos root e postmaster; -OK
 - Implementar migração dos domínios e apelidos; 
-- Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE); -OK
 - Incrementar a documentação;
 - Permitir filtro para exportar contas: todas, somente ativas, etc...;
 - Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas.
+
+DONE:
+
+- Confirmar se o novo nome do servidor, caso o hostname seja modificado, seja um FQDN; via <eduardo@bktech.com.br>
+- Confirmar se o nome do novo servidor (zmhostname) corresponde ao nome das entradas LDAP;
+- Tratar conta do admin (opção) - apelidos root e postmaster;
+- Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE); 
