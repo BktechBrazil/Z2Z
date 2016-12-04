@@ -20,11 +20,11 @@ APLICAÇÃO EM PARTICULAR.
 
 #################################################################################################################################
 										
-[README - v0.9.9b]
+[README - v0.9.9c]
 												
 Changelog: 
-21/11/2016- Criação do arquivo (Fabio Soares Schmidt)
-23/11/2016- Ler arquivo CHANGELOG
+
+ (FAVOR LER O ARQUIVO CHANGELOG)
 
 # INSTALAÇÃO
  
