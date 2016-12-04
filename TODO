@@ -1,11 +1,12 @@
 TODO:
 
-- Criar controle de sessões de exportação;
+- Criar controle de sessões de exportação e importação;
 - Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
-- Implementar migração dos domínios e apelidos; 
+- Implementar migração dos domínios; 
 - Incrementar a documentação;
-- Permitir filtro para exportar contas: todas, somente ativas, etc...;
+- Permitir filtro para exportar caixas postais: todas, somente ativas, etc...; *continuar importando todas as entradas no LDAP
 - Permitir migração de configuração de autenticação externa e/ou GAL (testar zimbraAuthMech);
+- Permitir migrar configurações comuns, tais como: relayhost, mynetworks;
 - Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas.
 
 DONE:
