@@ -74,7 +74,7 @@ mkdir $WORKDIR/alias #Cria diretorio temporario para exportar os nomes alternati
  $NORMAL_TEXT  "EXPORTANDO NOMES ALTERNATIVOS"
  separator_char
 
- ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password  -b '' -LLL "(objectclass=zimbraAlias)" uid | grep ^uid | awk '{print $2}' > $DESTINO/lista_contas.ldif
+ ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password  -b '' -LLL '(&(!(uid=root))(!(uid=postmaster))(objectclass=zimbraAlias))' uid | grep ^uid | awk '{print $2}' > $DESTINO/lista_contas.ldif
 
  for MAIL in $(cat $DESTINO/lista_contas.ldif);
  	do 
