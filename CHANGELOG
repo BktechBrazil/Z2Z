@@ -1,9 +1,9 @@
 CHANGELOG
 
 ### 0.9.9f ###
-#
+
 - Caso seja modificado o hostname do servidor, confirma se a entrada corresponde a um FQDN valido
-- Durante a importacao, confirma se hostname do servidor corresponde ao valor nos arquivos para importacao
+- Durante a importacao, valida se o hostname do servidor corresponde ao valor nos arquivos para importacao
 - Corrigidos erros em algumas funcoes 
 - Melhorias no codigo utilizando variaveis do ambiente Zimbra
 
