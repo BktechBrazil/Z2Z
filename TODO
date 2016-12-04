@@ -6,4 +6,5 @@
 - Implementar migração dos domínios e apelidos; 
 - Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE); -OK
 - Incrementar a documentação;
+- Permitir filtro para exportar contas: todas, somente ativas, etc...;
 - Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas.
