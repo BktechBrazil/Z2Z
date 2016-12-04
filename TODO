@@ -1,5 +1,6 @@
 - Confirmar se o novo nome do servidor, caso o hostname seja modificado, seja um FQDN; via <eduardo@bktech.com.br>
-- Confirmar se o nome do novo servidor (zmhostname) corresponde ao nome das entadas LDAP;
+- Confirmar se o nome do novo servidor (zmhostname) corresponde ao nome das entradas LDAP;
+- Criar controle de sessões de exportação;
 - Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
 - Tratar conta do admin (opção) - apelidos root e postmaster; -OK
 - Implementar migração dos domínios e apelidos; 
