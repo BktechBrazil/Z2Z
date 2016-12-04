@@ -35,7 +35,9 @@ o programa irá verificar suas depedências e confirmar se o administrador desej
 O programa Z2Z deve ser executado com o usuário Zimbra no servidor de origem da migração. Uma vez confirmada a execução, o programa irá
 efetuar o export das informações das classes de serviço (COS), contas, apelidos e listas de distribuição no diretório do Zimbra. O que inclui a preservação de todas informações da conta, incluindo a senha (caso não esteja sendo utilizada autenticação externa).
 
-Durante a exportação das contas, são excluídas da relação as contas de serviço do Zimbra, evitando qualquer impacto sobre o novo ambiente, por exemplo:
+Durante a exportação das contas***, são excluídas da relação as contas de serviço do Zimbra, evitando qualquer impacto sobre o novo ambiente, por exemplo:
+
+*** O administrador poderá escolher se deseja importar a conta ADMIN
 
  - Conta para SPAM
  - Conta não NÃO-SPAM (HAM)
