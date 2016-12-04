@@ -35,7 +35,7 @@ Check_Directory()
 {
 
 if [ ! -d "$DIRETORIO" ]; then
-	 $ERROR_TEXT "O diretorio $DIRETORIO nao existe, abortando execucao."
+	 $ERROR_TEXT "ERRO: O diretorio $DIRETORIO nao existe, abortando execucao."
 	 exit 1 
  else
 	 $INFO_TEXT "OK: Diretorio $DIRETORIO existente."
@@ -56,7 +56,7 @@ for i in "${COMANDOS[@]}"
 	 	$INFO_TEXT "OK: comando $i existente."
 		separator_char
        else
-    	$ERROR_TEXT "O comando $i nao foi encontrado, abortando execucao."
+    	$ERROR_TEXT "ERRO: O comando $i nao foi encontrado, abortando execucao."
     	exit 1
     fi
 done
@@ -74,11 +74,16 @@ read -p "Informe o novo hostname do servidor Zimbra: " userInput
 
 if [[ -z "$userInput" ]]; then
       printf '%s\n' ""
-      Zimbra_Installdir
+      Enter_New_Hostname
      else
-      $INFO_TEXT  "Hostname informado:" $userInput
-	  OLD_HOSTNAME=`zmhostname`
+	  TEST_FQDN=`echo $userInput | awk -F. '{print NF}'`
+	        if [ ! $TEST_FQDN -ge 2 ]; then
+		       $ERROR_TEXT "ERRO: O hostname informado nao e um FQDN valido"
+		       Enter_New_Hostname
+			fi
+	  OLD_HOSTNAME="$zimbra_server_hostname"
 	  NEW_HOSTNAME="$userInput"
+	  $CHOICE_TEXT "Hostname informado: $NEW_HOSTNAME"
 fi
 }
 
@@ -90,7 +95,7 @@ Run_as_Zimbra()
 if [ "$(whoami)" == "zimbra" ]; then
     $INFO_TEXT "OK: Executando como Zimbra."
    else
-    $ERROR_TEXT "Esse comando deve ser executado como Zimbra."
+    $ERROR_TEXT "ERRO: Esse comando deve ser executado como Zimbra."
     exit 1
 fi
 }
@@ -102,7 +107,11 @@ Replace_Hostname()
 	#$INFO_TEXT "Modificar hostname"
 read -p "O Hostname do servidor do Zimbra sera alterado (sim/nao)?" choice
    case "$choice" in
-   y|Y|yes|s|S|sim ) $CHOICE_TEXT "O Hostname do servidor sera alterado." ; Enter_New_Hostname ; Execute_Replace_Hostname ;;
+   y|Y|yes|s|S|sim ) 
+    $CHOICE_TEXT "O Hostname do servidor sera alterado." 
+	Enter_New_Hostname 
+	Execute_Replace_Hostname 
+	;;
    n|N|no|nao ) $CHOICE_TEXT "Sera mantido o hostname do servidor.";;
    * ) Replace_Hostname ;;
 esac
