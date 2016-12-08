@@ -3,6 +3,9 @@
 ###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
 ###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
+#DEFININDO VARIAVEIS DE AMBIENTE DO ZIMBRA
+source ~/bin/zmshutil
+zmsetvars
 
 #FUNCOES E VARIAVEIS PARA O UTILITARIO
 NORMAL_TEXT="printf \e[1;34m%-6s\e[m\n" #Azul
@@ -58,9 +61,6 @@ clear
 cat banner_simples.txt #Exibir Banner
 
 
-#DEFININDO VARIAVEIS DE AMBIENTE DO ZIMBRA
-source ~/bin/zmshutil
-zmsetvars
 ZIMBRAADMIN_DN=`ldapsearch -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -w $zimbra_ldap_password -b '' -LLL uid=admin dn | awk '{print $2}'` #OBTER DN DO ADMIN
 
 #INTERATIVIDADE: execucao da importacao
