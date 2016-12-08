@@ -44,7 +44,7 @@ APLICAÇÃO EM PARTICULAR.
  
 **Em casos de Upgrade, isto é, migrar PARA uma versão mais nova do Zimbra. Não é garantido o funcionamento em casos de downgrade.**
 
-Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo, exportando as classes de serviço, contas, nomes alternativos e listas de distribuição **(Permitindo que seja possível renomear o nome do servidor durante a exportação)**. Nesta primeira versão, Z2Z facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox. ** Os domínios devem ser previamente criados antes da importação. **
+Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitários de migração, a ferramenta agiliza e simplifica o processo, exportando as classes de serviço, contas, nomes alternativos e listas de distribuição **(Permitindo que seja possível renomear o nome do servidor durante a exportação)**. Nesta primeira versão, Z2Z facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox. **Os domínios devem ser previamente criados antes da importação.**
 
 # ROADMAP
  
