@@ -1,5 +1,10 @@
 CHANGELOG
 
+### 1.0.0a ###
+
+- Corrigido erro na rotina de comparar nome do servidor e LDIF para importacao
+- Implementado LOGs de sessao para importacao
+
 ### 0.9.9f ###
 
 - Caso seja modificado o hostname do servidor, confirma se a entrada corresponde a um FQDN valido
