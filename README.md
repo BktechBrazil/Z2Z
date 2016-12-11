@@ -47,7 +47,7 @@ Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitári
 
 **(Permitindo que seja possível renomear o nome do servidor durante a exportação)**.
 
-[x] Classes de serviço
+[ x ] Classes de serviço
 [x] Contas
 [x] Nomes alternativos
 [x] Listas de distribuição
