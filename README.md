@@ -49,7 +49,7 @@ Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitári
 
 [x] Classes de serviço
 
-[x] Contas
+[x] Contas - Preservando as senhas, caso esteja utilizando autenticação interna
 
 [x] Nomes alternativos
 
