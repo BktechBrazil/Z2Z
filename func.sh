@@ -158,9 +158,9 @@ execute_Export_Full()
 		 $NORMAL_TEXT "INBOX: Criando arquivo com as contas relacionadas para exportacao:" 
 		 $INFO_TEXT   "$WORKDIR/script_export_FULL.sh"
          for mailbox in $( echo $MAILBOX_LIST ); do
-		 echo "zmmailbox -z -m $mailbox getRestURL "//?fmt=tgz" > $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_export_FULL.sh #comando para export full
+		 echo "zmmailbox -z -m $mailbox -t 0 getRestURL "//?fmt=tgz" > $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_export_FULL.sh #comando para export full
 		 chmod +x $WORKDIR/script_export_FULL.sh
-		 echo "zmmailbox -z -m $mailbox postRestURL "//?fmt=tgz\&resolve=reset" $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_import_FULL.sh #comando para import full
+		 echo "zmmailbox -z -m $mailbox -t 0 postRestURL "//?fmt=tgz\&resolve=reset" $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_import_FULL.sh #comando para import full
 		 chmod +x $WORKDIR/script_import_FULL.sh
 done
 }
@@ -172,9 +172,9 @@ execute_Export_Trash()
 		 $NORMAL_TEXT "LIXEIRA: Criando arquivo com as contas relacionadas para exportacao:"
          $INFO_TEXT   "$WORKDIR/script_export_TRASH.sh"
         for i in $( echo $MAILBOX_LIST ); do
-		echo "zmmailbox -z -m $i gru '//Trash?fmt=tgz' > $EXPORT_PATH/$i-Trash.tgz" >> $WORKDIR/script_export_TRASH.sh
+		echo "zmmailbox -z -m $i -t 0 gru '//Trash?fmt=tgz' > $EXPORT_PATH/$i-Trash.tgz" >> $WORKDIR/script_export_TRASH.sh
 		chmod +x $WORKDIR/script_export_TRASH.sh
-		echo "zmmailbox -z -m $i postRestURL "//?fmt=tgz\&resolve=skip" $EXPORT_PATH/$i-Trash.tgz" >> $WORKDIR/script_import_TRASH.sh
+		echo "zmmailbox -z -m $i -t 0 postRestURL "//?fmt=tgz\&resolve=skip" $EXPORT_PATH/$i-Trash.tgz" >> $WORKDIR/script_import_TRASH.sh
 		chmod +x $WORKDIR/script_import_TRASH.sh
 done
 }
@@ -187,9 +187,9 @@ execute_Export_Junk()
 	     $NORMAL_TEXT "SPAM: Criando arquivo com as contas relacionadas para exportacao:"
          $INFO_TEXT   "$WORKDIR/script_export_JUNK.sh"
 		 for i in $( echo $MAILBOX_LIST ); do
-		 echo "zmmailbox -z -m $i gru '//Junk?fmt=tgz' > $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_export_JUNK.sh
+		 echo "zmmailbox -z -m $i -t 0 gru '//Junk?fmt=tgz' > $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_export_JUNK.sh
 		 chmod +x $WORKDIR/script_export_JUNK.sh
-		 echo "zmmailbox -z -m $i postRestURL "//?fmt=tgz\&resolve=skip" $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_import_TRASH.sh
+		 echo "zmmailbox -z -m $i -t 0 postRestURL "//?fmt=tgz\&resolve=skip" $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_import_TRASH.sh
 		 chmod +x $WORKDIR/script_import_TRASH.sh
 done
 
