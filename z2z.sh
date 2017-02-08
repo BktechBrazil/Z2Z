@@ -3,7 +3,7 @@
 ###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
 ###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
-###   VERSAO 1.0.0a (08/12/2016)
+###   VERSAO 1.0.0b (08/02/2017)
 
 #CARREGA FUNCOES UTILIZADAS PELO SCRIPT
 . func.sh
