@@ -1,5 +1,9 @@
 CHANGELOG
 
+### 1.0.0b ###
+
+- Adicionado parametro "-t 0" no comando zmmailbox para evitar timeouts em export/import de caixas superirores a 2GB
+
 ### 1.0.0a ###
 
 - Corrigido erro na rotina de comparar nome do servidor e LDIF para importacao
