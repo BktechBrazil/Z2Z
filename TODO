@@ -4,7 +4,7 @@ TODO:
 [x] Confirmar se o nome do novo servidor (zmhostname) corresponde ao nome das entradas LDAP;
 [x] Tratar conta do admin (opção) - apelidos root e postmaster;
 [x] Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE); 
-[ ] Verificar timeout em operações de export e import com caixas postais grandes (+2GB); via <fbraga@trt13.jus.br>
+[x] Verificar timeout em operações de export e import com caixas postais grandes (+2GB); via <fbraga@trt13.jus.br>
 [ ] Criar controle de sessões de exportação e importação;
 [ ] Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
 [ ] Implementar migração dos domínios; - 1.2 
