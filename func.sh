@@ -160,7 +160,7 @@ execute_Export_Full()
          for mailbox in $( echo $MAILBOX_LIST ); do
 		 echo "zmmailbox -z -m $mailbox -t 0 getRestURL "//?fmt=tgz" > $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_export_FULL.sh #comando para export full
 		 chmod +x $WORKDIR/script_export_FULL.sh
-		 echo "zmmailbox -z -m $mailbox -t 0 postRestURL "//?fmt=tgz\&resolve=reset" $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_import_FULL.sh #comando para import full
+		 echo "zmmailbox -z -m $mailbox -t 0 postRestURL "//?fmt=tgz\&resolve=skip" $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_import_FULL.sh #comando para import full
 		 chmod +x $WORKDIR/script_import_FULL.sh
 done
 }
