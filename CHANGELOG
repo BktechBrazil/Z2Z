@@ -3,6 +3,7 @@ CHANGELOG
 ### 1.0.0b ###
 
 - Adicionado parametro "-t 0" no comando zmmailbox para evitar timeouts em export/import de caixas superirores a 2GB
+- Método de importação alterado de reset (que apaga o conteúdo anterior da caixa) para skip (que preserva qualquer conteúdo anterior)
 
 ### 1.0.0a ###
 
