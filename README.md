@@ -59,7 +59,7 @@ Embora o Zimbra seja uma ferramenta bastante avançada na questão de utilitári
 
 Nesta primeira versão, Z2Z facilita o processo de exportação das entradas citadas, além de criar o lote de contas que devem ser exportadas, utilizando o comando nativo - zmmailbox. **Os domínios devem ser previamente criados antes da importação.**
 
-![alt tag](https://respirandolinux.files.wordpress.com/2016/11/prtscr-capture1.jpg) 
+![alt tag](https://respirandolinux.files.wordpress.com/2017/02/zimbrazimbratmp333z2z-master.jpg) 
 
 # ROADMAP
  
