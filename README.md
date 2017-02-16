@@ -1,4 +1,4 @@
-# Z2Z (Zimbra2Zimbra Migration Tool) - _Versão 1.0.0b_ - Mantido por BKTECH <http://www.bktech.com.br>
+# Z2Z (Zimbra2Zimbra Migration Tool) - _Versão 1.0.0c_ - Mantido por BKTECH <http://www.bktech.com.br>
  
 # Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
 
@@ -63,7 +63,7 @@ Nesta primeira versão, Z2Z facilita o processo de exportação das entradas cit
 
 # ROADMAP
  
-Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server, além da exportação das principais configurações do ambiente Zimbra.
+Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server que envolvam a substituição de hostnames de servidores mailbox, além da exportação das principais configurações do ambiente Zimbra.
 
 Também está no plano de evolução da mesma, o tratamento de diferentes estratégias de migração, permitindo migrações gradativas, por exemplo, através  de processos de export e import incrementais. 
  
