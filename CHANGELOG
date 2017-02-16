@@ -1,5 +1,10 @@
 CHANGELOG
 
+### 1.0.0c ###
+
+- Homologado para ambientes Multi-Server que nao envolvam alteração de hostname OU a alteração de mais de 1 hostname 
+  -- Aplicável somente para servidores Mailbox
+
 ### 1.0.0b ###
 
 - Adicionado parametro "-t 0" no comando zmmailbox para evitar timeouts em export/import de caixas superirores a 2GB
