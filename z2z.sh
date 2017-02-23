@@ -3,7 +3,7 @@
 ###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
 ###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
-###   VERSAO 1.0.0c (16/02/2017)
+###   VERSAO 1.0.1 (23/02/2017)
 
 #CARREGA FUNCOES UTILIZADAS PELO SCRIPT
 . func.sh
@@ -88,7 +88,7 @@ mkdir $WORKDIR/alias #Cria diretorio temporario para exportar os nomes alternati
 #EXPORTANDO LISTAS DE DISTRIBUICAO
    $NORMAL_TEXT  "EXPORTANDO LISTAS DE DISTRIBUICAO"
    separator_char
-ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password -b '' -LLL "(objectclass=zimbraDistributionList)" > $DESTINO/LISTAS.ldif
+ldapsearch -x -H ldap://$ZIMBRA_HOSTNAME -D $ZIMBRA_BINDDN -w $zimbra_ldap_password -b '' -LLL "(|(objectclass=zimbraGroup)(objectclass=zimbraDistributionList))" > $DESTINO/LISTAS.ldif
    $INFO_TEXT "LISTAS DE DISTRIBUICAO EXPORTADAS COM SUCESSO: $DESTINO/LISTAS.ldif"
    separator_char
 
