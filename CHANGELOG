@@ -1,5 +1,9 @@
 CHANGELOG
 
+### 1.0.1 ###
+
+- Alterado filtro de exportacao das listas de distribuicao para contemplar groupos (objectclass=zimbraGroup)
+
 ### 1.0.0c ###
 
 - Homologado para ambientes Multi-Server que nao envolvam alteração de hostname OU a alteração de mais de 1 hostname 
