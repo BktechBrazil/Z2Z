@@ -76,7 +76,6 @@ ZIMBRAADMIN_DN=`ldapsearch -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_
 #INTERATIVIDADE: execucao da importacao
 test_exec()
 {
-echo "$INFO_TEXT: Essa versao NAO cria ou importa os dominios, somente continue se ja tiver criado os dominios do ambiente"
 read -p "Deseja iniciar a importacao das CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS E DISTRIBUICAO (sim/nao)?" choice
     case "$choice" in
      y|Y|yes|s|S|sim ) $NORMAL_TEXT "Iniciando Z2Z";;
