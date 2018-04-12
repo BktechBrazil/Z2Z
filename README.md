@@ -65,6 +65,9 @@ Nesta primeira versão, Z2Z facilita o processo de exportação das entradas cit
 
 "Recentemente utilizamos como apoio à migração de 2400 contas a ferramenta **Z2Z** no Tribunal Regional do Trabalho da 13ª Região. Tal ferramenta foi bastante útil pois estávamos em uma versão bem antiga do zimbra o que impossibilitou o update via script. A migração ocorreu de forma incremental devido a quantidade de contas até o chaveamento. Tudo ocorreu conforme o esperado e hoje estamos usando a versão mais atual do zimbra." - Filipe A. Motta Braga - Tribunal Regional do Trabalho da 13a. Região - Paraíba 
 
+"Gostaria de parabeniza-lo pela excelente ferramenta z2z, me ajudou bastante em uma migração do Zimbra 8.0.7 para 8.7.11
+Grande abraço!" - Marco Brandão - Plus Informática - Minas Gerais
+
 # ROADMAP
  
 Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server que envolvam a substituição de hostnames de servidores mailbox, além da exportação das principais configurações do ambiente Zimbra.
