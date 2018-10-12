@@ -68,6 +68,8 @@ Nesta primeira versão, Z2Z facilita o processo de exportação das entradas cit
 "Gostaria de parabeniza-lo pela excelente ferramenta z2z, me ajudou bastante em uma migração do Zimbra 8.0.7 para 8.7.11
 Grande abraço!" - Marco Brandão - Plus Informática - Minas Gerais
 
+"Parabéns por essa excelente ferramenta, seria impossível migrar o servidor antigo de nossa empresa sem o auxílio do seu projeto. A importação foi perfeita, quase 160 contas contas com mais de 700GB de dados, nenhuma falha e ambiente rápido e estável após a importação." - Alisson S. Conde – Equipe de TI Paranatex Têxtil LTDA - Paraná
+
 # ROADMAP
  
 Em versões futuras, a ferramenta visa atender cenários com ambientes Multi-Server que envolvam a substituição de hostnames de servidores mailbox, além da exportação das principais configurações do ambiente Zimbra.
