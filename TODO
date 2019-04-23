@@ -14,3 +14,4 @@ TODO:
 [ ] Permitir migrar configurações comuns, tais como: relayhost, mynetworks; - 1.2
 [ ] Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas. - 1.2
 [ ] Utilizar whiptail para interface. - 2.0
+[ ] Criar correção de compartilhamentos - 2.0
