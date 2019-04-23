@@ -70,8 +70,7 @@ Grande abraço!" - Marco Brandão - Plus Informática - Minas Gerais
 
 "Parabéns por essa excelente ferramenta, seria impossível migrar o servidor antigo de nossa empresa sem o auxílio do seu projeto. A importação foi perfeita, quase 160 contas contas com mais de 700GB de dados, nenhuma falha e ambiente rápido e estável após a importação." - Alisson S. Conde – Equipe de TI Paranatex Têxtil LTDA - Paraná
 
-"Olá, sou Fernando Lima da Gobah! Soluções em TI. 
-Eu utilizei o Z2Z para fazer uma migração de dois servidores zimbra (8.8.11 > 8.8.12). E minha experiência com a ferramenta foi a melhor possível, ocorreu tudo dentro do esperando, sem nenhum erro. Tempos atrás tive que fazer o mesmo trabalho, como ainda não conhecia a ferramenta, tentamos pela própria zimbra, mas tivemos muitos erros com caixas acima de 2GB, então fizemos por outros métodos. Isso nos custou quase 3 dias de trabalhos. Com o Z2Z, pudemos fazer o mesmo trabalho em apenas um dia e sem dor de cabeça. "Valeu Fábio pelo excelente trabalho."
+"Eu utilizei o Z2Z para fazer uma migração de dois servidores zimbra (8.8.11 > 8.8.12). E minha experiência com a ferramenta foi a melhor possível, ocorreu tudo dentro do esperando, sem nenhum erro. Tempos atrás tive que fazer o mesmo trabalho, como ainda não conhecia a ferramenta, tentamos pela própria zimbra, mas tivemos muitos erros com caixas acima de 2GB, então fizemos por outros métodos. Isso nos custou quase 3 dias de trabalhos. Com o Z2Z, pudemos fazer o mesmo trabalho em apenas um dia e sem dor de cabeça. Valeu Fábio pelo excelente trabalho." - Fernando Lima, Gobah! Soluções em TI - Goiás. 
 
 # ROADMAP
  
