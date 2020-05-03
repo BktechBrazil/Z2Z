@@ -72,9 +72,8 @@ Check_Maibox()
 {
 
 if (($MAILBOX_SERVERS > $MAILBOX_SERVERS)); then
-	$INFO_TEXT "CUIDADO: A versao atual foi desenvolvida para ambientes Single Server ou com apenas um servidor mailbox."
-	$INFO_TEXT "CUIDADO: Para ambientes com mais de um servidor Mailbox sera necessario alterar os arquivos exportados se desejar renomear os servidores"
-	exit 1
+	$ERROR_TEXT "CUIDADO: A versao atual foi desenvolvida para ambientes Single Server ou com apenas um servidor mailbox."
+	$ERROR_TEXT "CUIDADO: Para ambientes com mais de um servidor Mailbox sera necessario alterar os arquivos exportados se desejar renomear os servidores"
 else
 	$NORMAL_TEXT "OK: Ambiente possui apenas um servidor Mailbox"
 fi
