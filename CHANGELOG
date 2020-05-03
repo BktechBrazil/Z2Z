@@ -1,0 +1,42 @@
+CHANGELOG
+
+### 1.0.2 ###
+
+- Criado aviso para instalações com mais de um servidor Mailbox
+
+### 1.0.1 ###
+
+- Alterado filtro de exportacao das listas de distribuicao para contemplar groupos (objectclass=zimbraGroup)
+
+### 1.0.0c ###
+
+- Homologado para ambientes Multi-Server que nao envolvam alteração de hostname OU a alteração de mais de 1 hostname 
+  -- Aplicável somente para servidores Mailbox
+
+### 1.0.0b ###
+
+- Adicionado parametro "-t 0" no comando zmmailbox para evitar timeouts em export/import de caixas superirores a 2GB
+- Método de importação alterado de reset (que apaga o conteúdo anterior da caixa) para skip (que preserva qualquer conteúdo anterior)
+
+### 1.0.0a ###
+
+- Corrigido erro na rotina de comparar nome do servidor e LDIF para importacao
+- Implementado LOGs de sessao para importacao
+
+### 0.9.9f ###
+
+- Caso seja modificado o hostname do servidor, confirma se a entrada corresponde a um FQDN valido
+- Durante a importacao, valida se o hostname do servidor corresponde ao valor nos arquivos para importacao
+- Corrigidos erros em algumas funcoes 
+- Melhorias no codigo utilizando variaveis do ambiente Zimbra
+
+### 0.9.9c ###
+
+- Viabiliza a importacao do usuario ADMIN, permitindo ao administrador decidir pela importação ou não.
+- Adiciona exceções para os alias padrão "root" e "postmaster" para que não sejam exportados.
+
+### 0.9.9 ###
+
+- Viabiliza a importação das classes de serviço padrão (Default e DefaultExternal), removendo as entradas no LDAP ao importar para adicionar
+as entradas exportadas.
+- Exclui da exportação das contas de serviço do Zimbra, evitando impacto nas configurações do novo ambiente.
