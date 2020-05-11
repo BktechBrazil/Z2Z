@@ -10,6 +10,8 @@ CHOICE_TEXT="printf '\e[1;32m%s\e[0m\n'" #Verde
 NO_COLOUR="'\e[0m'" #Branco
 MAILBOX_LIST=`zmprov -l gaa | grep -v -E "admin|virus-|ham.|spam.|galsync"` #TODAS AS CONTAS DO ZIMBRA, EXCETO CONTAS DE SISTEMA
 WORKDIR=`pwd`"/export"
+SINGLE_MAILBOX=1
+MAILBOX_SERVERS="`zmprov gas mailbox | wc -l`"
 
 ##
 
@@ -62,6 +64,19 @@ for i in "${COMANDOS[@]}"
 done
 
 
+}
+
+##
+
+Check_Maibox()
+{
+
+if (($MAILBOX_SERVERS > $MAILBOX_SERVERS)); then
+	$ERROR_TEXT "CUIDADO: A versao atual foi desenvolvida para ambientes Single Server ou com apenas um servidor mailbox."
+	$ERROR_TEXT "CUIDADO: Para ambientes com mais de um servidor Mailbox sera necessario alterar os arquivos exportados se desejar renomear os servidores"
+else
+	$NORMAL_TEXT "OK: Ambiente possui apenas um servidor Mailbox"
+fi
 }
 
 ##

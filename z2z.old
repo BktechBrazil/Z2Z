@@ -3,7 +3,7 @@
 ###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
 ###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
 
-###   VERSAO 1.0.2
+###   VERSAO 1.0.1 (23/02/2017)
 
 #CARREGA FUNCOES UTILIZADAS PELO SCRIPT
 . func.sh
@@ -25,14 +25,11 @@ separator_char
 #TESTES PARA EXECUCAO DO UTILITARIO
 
 #COMANDOS NECESSARIOS
-declare -a COMANDOS=('ldapsearch' 'zmmailbox' 'zmshutil' 'zmprov');
+declare -a COMANDOS=('ldapsearch' 'zmmailbox' 'zmshutil');
 
 Check_Command
 separator_char
 
-#VALIDA AMBIENTE SINGLE SERVER OU SINGLE MAILBOX
-Check_Maibox
-separator_char
 
 #DEFININDO VARIAVEIS DE AMBIENTE DO ZIMBRA
 source ~/bin/zmshutil

@@ -1,5 +1,9 @@
 CHANGELOG
 
+### 1.0.2 ###
+
+- Criado aviso para instalações com mais de um servidor Mailbox
+
 ### 1.0.1 ###
 
 - Alterado filtro de exportacao das listas de distribuicao para contemplar groupos (objectclass=zimbraGroup)
