@@ -27,7 +27,7 @@ if [ "$(whoami)" != "zimbra" ]; then
 fi
 
 #ARQUIVOS NECESSARIOS PARA EXECUCAO
-declare -a ARQUIVOS_IMPORT=('APELIDOS.ldif' 'CONTAS.ldif' 'COS.ldif' 'LISTAS.ldif');
+declare -a ARQUIVOS_IMPORT=('CONTAS.ldif' 'COS.ldif');
 
 for i in "${ARQUIVOS_IMPORT[@]}"
     do
