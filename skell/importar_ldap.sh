@@ -1,18 +1,18 @@
 #/bin/bash
-###   Z2Z - Mantido por BKTECH <http://www.bktech.com.br>                         ###
-###   Copyright (C) 2016  Fabio Soares Schmidt <fabio@respirandolinux.com.br>     ###
-###   PARA INFORMACOES SOBRE A FERRAMENTA, FAVOR LER OS ARQUIVOS README E INSTALL ###
+### Z2Z -Maintained by BKTECH <http://www.bktech.com.br> ###
+### Copyright (C) 2016 Fabio Soares Schmidt <fabio@respirandolinux.com.br> ###
+### FOR INFORMATION ABOUT THE TOOL, PLEASE READ THE README AND INSTALL FILES ###
 
-#DEFININDO VARIAVEIS DE AMBIENTE DO ZIMBRA
+#DEFINING ZIMBRA ENVIRONMENTAL VARIABLES
 source ~/bin/zmshutil
 zmsetvars
 
-#FUNCOES E VARIAVEIS PARA O UTILITARIO
-NORMAL_TEXT="printf \e[1;34m%-6s\e[m\n" #Azul
-ERROR_TEXT="printf \e[1;31m%s\e[0m\n" #Vermelho
-INFO_TEXT="printf \e[1;33m%s\e[0m\n" #Amarelo
-CHOICE_TEXT="printf \e[1;32m%s\e[0m\n" #Verde
-NO_COLOUR="printf \e[0m" #Branco
+#FUNCTIONS AND VARIABLES FOR THE UTILITY
+NORMAL_TEXT="printf \e[1;34m%-6s\e[m\n" #Blue
+ERROR_TEXT="printf \e[1;31m%s\e[0m\n" #Red
+INFO_TEXT="printf \e[1;33m%s\e[0m\n" #Yellow
+CHOICE_TEXT="printf \e[1;32m%s\e[0m\n" #Green
+NO_COLOUR="printf \e[0m" #White
 DEFAULTCOS_DN="cn=default,cn=cos,cn=zimbra"
 DEFAULTEXTERNALCOS_DN="cn=defaultExternal,cn=cos,cn=zimbra"
 SERVER_HOSTNAME=$zimbra_server_hostname
@@ -20,65 +20,65 @@ SESSION=`date +"%d_%b_%Y-%H-%M"`
 SESSION_LOG="registro-$SESSION.log"
 
 
-#CONFIRMA SE ESTA SENDO EXECUTADO COM O USUARIO ZIMBRA
+#CONFIRM IF IT IS RUN WITH USER ZIMBRA
 if [ "$(whoami)" != "zimbra" ]; then
-    $ERROR_TEXT "Esse comando deve ser executado como Zimbra."
+    $ERROR_TEXT "This command must be run as Zimbra."
     exit 1
 fi
 
-#ARQUIVOS NECESSARIOS PARA EXECUCAO
-declare -a ARQUIVOS_IMPORT=('CONTAS.ldif' 'COS.ldif');
+#FILES REQUIRED FOR EXECUTION
+declare -a IMPORT_FILES=('ACCOUNTS.ldif' 'COS.ldif');
 
-for i in "${ARQUIVOS_IMPORT[@]}"
+for i in "${IMPORT_FILES[@]}"
     do
     if [ -r $i ]
       then
-	  $INFO_TEXT "OK: Arquivo $i encontrado"
+	  $INFO_TEXT "OK: File $i found"
 	  else
-      $ERROR_TEXT  "ERRO: Arquivo $i nao encontrado ou sem permissao de leitura."
+      $ERROR_TEXT  "ERROR: File $i not found or without read permission."
       exit 1
 fi
 done
 
-#OBTENDO HOSTNAME NAS ENTRADAS PARA CONFIRMAR SE CORRESPONDE AO HOSTNAME DO SERVIDOR
-LDIF_HOSTNAME=`grep zimbraMailHost CONTAS.ldif | uniq | awk '{print $2}'`
+#GETTING HOSTNAME IN ENTRIES TO CONFIRM IF IT MATCHES THE SERVER'S HOSTNAME
+LDIF_HOSTNAME=`grep zimbraMailHost ACCOUNTS.ldif | uniq | awk '{print $2}'`
 if [ "$SERVER_HOSTNAME" != "$LDIF_HOSTNAME" ]; then
-	   $ERROR_TEXT "ERRO: O hostname do servidor nao corresponde ao hostname dos arquivos de importacao"
-	   $INFO_TEXT "Hostname do servidor: $SERVER_HOSTNAME"
-	   $INFO_TEXT "Hostname nos arquivos para importacao: $LDIF_HOSTNAME"
+	   $ERROR_TEXT "ERROR: The server hostname does not match the hostname of the import files"
+	   $INFO_TEXT "Server hostname: $SERVER_HOSTNAME"
+	   $INFO_TEXT "Hostname in the files for import: $LDIF_HOSTNAME"
 	   exit 1
 fi
 
-#COMANDOS NECESSARIOS PARA A EXECUCAO
+#COMMANDS REQUIRED FOR EXECUTION
 declare -a COMANDOS=('ldapsearch' 'zmhostname' 'zmshutil' 'zmmailbox');
 
 for i in "${COMANDOS[@]}"
     do
 	type $i >/dev/null 2>/dev/null
 if [ $? != 0 ]; then
-	  $ERROR_TEXT "ERRO: O comando $i nao foi encontrado, abortando execucao."
+	  $ERROR_TEXT "ERROR: The command $i was not found, aborting execution."
 	  exit 1
 fi
 done
 
 #
 clear
-cat banner_simples.txt #Exibir Banner
+cat banner_simples.txt #Display Banner
 
-#INICIANDO ROTINAS DE IMPORTACAO
+#STARTING IMPORT ROUTINES
 echo ""
 echo ""
-$INFO_TEXT "Essa versao NAO cria ou importa os dominios, somente continue se ja tiver criado os dominios do ambiente"
-$INFO_TEXT "Importacao iniciada em: $SESSION" &> $SESSION_LOG
-$NORMAL_TEXT "Registro da sessao: $SESSION_LOG"
-ZIMBRAADMIN_DN=`ldapsearch -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -w $zimbra_ldap_password -b '' -LLL uid=admin dn | awk '{print $2}'` &>> $SESSION_LOG #OBTER DN DO ADMIN
+$INFO_TEXT "This version DOES NOT create or import domains, only continue if you have already created the environment domains"
+$INFO_TEXT "Import started at: $SESSION" &> $SESSION_LOG
+$NORMAL_TEXT "Session registration: $SESSION_LOG"
+ZIMBRAADMIN_DN=`ldapsearch -x -H ldap://$SERVER_LDAP_HOSTNAME -D $zimbra_ldap_userdn -w $zimbra_ldap_password -b '' -LLL uid=admin dn | awk '{print $2}'` &>> $SESSION_LOG #GET ADMIN DN
 
-#INTERATIVIDADE: execucao da importacao
+#INTERACTIVITY: execution of the import
 test_exec()
 {
-read -p "Deseja iniciar a importacao das CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS E DISTRIBUICAO (sim/nao)?" choice
+read -p "Do you want to start importing COS, ACCOUNTS, ALIAS AND DISTRIBUTION LIST (yes/no)?" choice
     case "$choice" in
-     y|Y|yes|s|S|sim ) $NORMAL_TEXT "Iniciando Z2Z";;
+     y|Y|yes|s|S|sim ) $NORMAL_TEXT "Starting Z2Z";;
      n|N|no|nao ) exit 0;;
 	 * ) test_exec ;;
      esac
@@ -87,38 +87,38 @@ read -p "Deseja iniciar a importacao das CLASSES DE SERVICO, CONTAS, NOMES ALTER
 test_exec #executa a funcao test_exec
 
 
-#INTERATIVIDADE: importacao do usuario admin
+#INTERACTIVITY: importing the admin user
 test_importadmin()
 {
 echo ""
-read -p "Deseja importar o usuario ADMIN (sim/nao)?" choice
+read -p "Do you want to import the ADMIN user (yes/no)?" choice
     case "$choice" in
 	  y|Y|yes|s|S|sim ) 
-	               $NORMAL_TEXT "Removendo ADMIN: $ZIMBRAADMIN_DN" 
-				   ldapdelete -r -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $ZIMBRAADMIN_DN &>> $SESSION_LOG
+	               $NORMAL_TEXT "Removing ADMIN: $ZIMBRAADMIN_DN" 
+				   ldapdelete -r -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $ZIMBRAADMIN_DN &>> $SESSION_LOG
 				   ;;
-	  n|N|no|nao ) $CHOICE_TEXT "O usuario admin nao sera importado. Utilize a senha da NOVA instalacao";;
+	  n|N|no|nao ) $CHOICE_TEXT "The admin user will not be imported. Use the NEW installation password";;
 	  * ) test_importadmin ;;
 esac
 }
 
-test_importadmin #executa a funcao test_importadmin
+test_importadmin #executes the test_importadmin function
 
-#INICIA IMPORTACAO DAS CLASSES DE SERVICO, CONTAS, NOMES ALTERNATIVOS E LISTAS DE DISTRIBUICAO
-## REMOVE AS CLASSES DE SERVICO PADRAO DO ZIMBRA: DEFAULT E ZIMBRADEFAULT
-$INFO_TEXT "Removendo classes de servico padrao: Default e DefaultExternal"
-ldapdelete -r -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $DEFAULTCOS_DN &>> $SESSION_LOG
-ldapdelete -r -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $DEFAULTEXTERNALCOS_DN &>> $SESSION_LOG
+#BEGINS IMPORTATION OF SERVICE CLASSES, ACCOUNTS, ALTERNATIVE NAMES AND DISTRIBUTION LISTS
+## REMOVE ZIMBRA'S DEFAULT COS: DEFAULT AND ZIMBRADEFAULT
+$INFO_TEXT "Removing default service classes: Default e DefaultExternal"
+ldapdelete -r -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $DEFAULTCOS_DN &>> $SESSION_LOG
+ldapdelete -r -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -c -w $zimbra_ldap_password $DEFAULTEXTERNALCOS_DN &>> $SESSION_LOG
 
-## IMPORTACAO DAS COS, CONTAS, APELIDOS E LISTAS
+## IMPORT OF COS, ACCOUNTS, ALIAS AND DISTRIBUTION LISTS
 
-$INFO_TEXT "Importando classes de servico"
-ldapadd -c -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f COS.ldif &>> $SESSION_LOG
-$INFO_TEXT "Importando contas"
-ldapadd -c -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f CONTAS.ldif &>> $SESSION_LOG
-$INFO_TEXT "importando nomes alternativos"
-ldapadd -c -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f APELIDOS.ldif &>> $SESSION_LOG
-$INFO_TEXT "importando listas de distribuicao"
-ldapadd -c -x -H ldap://$zimbra_server_hostname -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f LISTAS.ldif &>> $SESSION_LOG
+$INFO_TEXT "Importing COS"
+ldapadd -c -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f COS.ldif &>> $SESSION_LOG
+$INFO_TEXT "Importing accounts"
+ldapadd -c -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f ACCOUNTS.ldif &>> $SESSION_LOG
+$INFO_TEXT "importing alias"
+ldapadd -c -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f ALIAS.ldif &>> $SESSION_LOG
+$INFO_TEXT "import distribution lists"
+ldapadd -c -x -H ldap://$SERVER_HOSTNAME -D $zimbra_ldap_userdn -w $zimbra_ldap_password -f LISTAS.ldif &>> $SESSION_LOG
 
 #

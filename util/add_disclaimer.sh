@@ -1,11 +1,10 @@
 #!/bin/bash
-#Utilitario para adicionr disclaimer para todos os dominios
-#A partir da versão 8.5, foi adicionada o recurso de criacao de disclaimer por dominio, nao sendo possivel
-#utilizar um disclaimer universal
+#Utility to add disclaimer for all domains
+#As of version 8.5, the feature of creating a disclaimer per domain was added, which is not possible
+#use a universal disclaimer
 
-#Obtem a relacao de todos os dominios para adicionar um disclaimer padrao
+#Get the list of all domains to add a standard disclaimer
 	for DOMAIN in $(zmprov gad); do
-		echo Adicionando Disclaimers para o dominio: $DOMAIN
+		echo Adding Disclaimers to the domain: $DOMAIN
 		zmprov md $DOMAIN zimbraAmavisDomainDisclaimerText "$(cat /opt/zimbra/postfix/conf/disclaimer.txt)"
 		zmprov md $DOMAIN zimbraAmavisDomainDisclaimerHTML "$(cat /opt/zimbra/postfix/conf/disclaimer.html)"
-done
