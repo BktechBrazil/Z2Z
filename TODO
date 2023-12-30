@@ -1,18 +1,18 @@
 TODO:
 
-[x] Confirmar se o novo nome do servidor, caso o hostname seja modificado, seja um FQDN; via <eduardo@bktech.com.br>
-[x] Confirmar se o nome do novo servidor (zmhostname) corresponde ao nome das entradas LDAP;
-[x] Tratar conta do admin (opção) - apelidos root e postmaster;
-[x] Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE); 
-[x] Verificar timeout em operações de export e import com caixas postais grandes (+2GB); via <fbraga@trt13.jus.br>
-[ ] Criar controle de sessões de exportação e importação;
-[ ] Melhorar a varáivel para conectar no ldap com o valor da ldap_url ao invés de ldap://$ZIMBRA_HOSTNAME
-[ ] Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
-[ ] Implementar migração dos domínios; - 1.2 
-[ ] Incrementar a documentação;
-[ ] Permitir filtro para exportar caixas postais: todas, somente ativas, etc...; *continuar importando todas as entradas no LDAP - 1.2
-[ ] Permitir migração de configuração de autenticação externa e/ou GAL (testar zimbraAuthMech); - 1.2
-[ ] Permitir migrar configurações comuns, tais como: relayhost, mynetworks; - 1.2
-[ ] Tratar correções e verificações de vulnerabilidades (zimbra) conhecidas. - 1.2
-[ ] Utilizar whiptail para interface. - 2.0
-[ ] Criar correção de compartilhamentos - 2.0
+[x] Confirm that the new server name, if the hostname is modified, is an FQDN; via <eduardo@bktech.com.br>
+[x] Confirm that the name of the new server (zmhostname) matches the name of the LDAP entries;
+[x] Treat admin account (option) -root and postmaster nicknames;
+[x] Add exception to not import system accounts (zimbraIsSystemResource:TRUE);
+[x] Check timeout in export and import operations with large mailboxes (+2GB); via <fbraga@trt13.jus.br>
+[ ] Create control of export and import sessions;
+[ ] Improve the variable to connect to ldap with the value of ldap_url instead of ldap://$ZIMBRA_HOSTNAME
+[ ] Enable the option to start exporting mailboxes; via <eduardo@bktech.com.br>
+[ ] Implement domain migration; -1.2
+[ ] Increase documentation;
+[ ] Allow filter to export mailboxes: all, only active, etc...; *continue importing all entries in LDAP -1.2
+[ ] Allow migration of external authentication configuration and/or GAL (test zimbraAuthMech); -1.2
+[ ] Allow migrating common configurations, such as: relayhost, mynetworks; -1.2
+[ ] Handle fixes and checks for known vulnerabilities (zimbra). -1.2
+[ ] Use whiptail for interface. -2.0
+[ ] Create Shares Fix -2.0
