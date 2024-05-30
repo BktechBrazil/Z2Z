@@ -204,8 +204,8 @@ execute_Export_Junk()
 		 for i in $( echo $MAILBOX_LIST ); do
 		 echo "zmmailbox -z -m $i -t 0 gru \"//Junk?fmt=tgz\" > $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_export_JUNK.sh
 		 chmod +x $WORKDIR/script_export_JUNK.sh
-		 echo "zmmailbox -z -m $i -t 0 postRestURL \"//?fmt=tgz&resolve=skip\" $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_import_TRASH.sh
-		 chmod +x $WORKDIR/script_import_TRASH.sh
+		 echo "zmmailbox -z -m $i -t 0 postRestURL \"//?fmt=tgz&resolve=skip\" $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_import_JUNK.sh
+		 chmod +x $WORKDIR/script_import_JUNK.sh
 done
 
 }
