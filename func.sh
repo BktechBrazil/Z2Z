@@ -1,14 +1,14 @@
 #!/bin/bash
 #Changelog: 
-# 15/Nov/2016: Criação do arquivo func.sh (Fabio Soares Schmidt)
+# 15/Nov/2016: Creating the func.sh file (Fabio Soares Schmidt)
 
-#FUNCOES E VARIAVEIS PARA O UTILITARIO
-NORMAL_TEXT="printf '\e[1;34m%-6s\e[m\n'" #Azul
-ERROR_TEXT="printf '\e[1;31m%s\e[0m\n'" #Vermelho
-INFO_TEXT="printf '\e[1;33m%s\e[0m\n'" #Amarelo
-CHOICE_TEXT="printf '\e[1;32m%s\e[0m\n'" #Verde
-NO_COLOUR="'\e[0m'" #Branco
-MAILBOX_LIST=`zmprov -l gaa | grep -v -E "admin|virus-|ham.|spam.|galsync"` #TODAS AS CONTAS DO ZIMBRA, EXCETO CONTAS DE SISTEMA
+#FUNCTIONS AND VARIABLES FOR THE UTILITY
+NORMAL_TEXT="printf '\e[1;34m%-6s\e[m\n'" #Blue
+ERROR_TEXT="printf '\e[1;31m%s\e[0m\n'" #Red
+INFO_TEXT="printf '\e[1;33m%s\e[0m\n'" #Yellow
+CHOICE_TEXT="printf '\e[1;32m%s\e[0m\n'" #Green
+NO_COLOUR="'\e[0m'" #White
+MAILBOX_LIST=`zmprov -l gaa | grep -v -E "admin|virus-|ham.|spam.|galsync"` #ALL ZIMBRA ACCOUNTS EXCEPT SYSTEM ACCOUNTS
 WORKDIR=`pwd`"/export"
 SINGLE_MAILBOX=1
 MAILBOX_SERVERS="`zmprov gas mailbox | wc -l`"
@@ -23,9 +23,9 @@ echo ++++++++++++++++++++++++++++++++++++++++
 
 test_exec()
 {
-read -p "Continuar (sim/nao)?" choice
+read -p "Continue (Yes/No)?" choice
     case "$choice" in
-     y|Y|yes|s|S|sim ) $NORMAL_TEXT "Iniciando utilitario";;
+     y|Y|yes|s|S|sim ) $NORMAL_TEXT "Starting utility";;
      n|N|no|nao ) exit 0;;
      * ) test_exec ;;
 esac
@@ -37,10 +37,10 @@ Check_Directory()
 {
 
 if [ ! -d "$DIRETORIO" ]; then
-	 $ERROR_TEXT "ERRO: O diretorio $DIRETORIO nao existe, abortando execucao."
+	 $ERROR_TEXT "Error: The directory $DIRETORIO does not exist, aborting execution."
 	 exit 1 
  else
-	 $INFO_TEXT "OK: Diretorio $DIRETORIO existente."
+	 $INFO_TEXT "OK: Existing $DIRECTORY directory."
 
 fi
 }
@@ -55,10 +55,10 @@ for i in "${COMANDOS[@]}"
     # do whatever on $i
     type $i >/dev/null 2>/dev/null
       if [ $? == 0 ]; then
-	 	$INFO_TEXT "OK: comando $i existente."
+	 	$INFO_TEXT "OK: existing $i command."
 		separator_char
        else
-    	$ERROR_TEXT "ERRO: O comando $i nao foi encontrado, abortando execucao."
+    	$ERROR_TEXT "Error: The command $i was not found, aborting execution."
     	exit 1
     fi
 done
@@ -72,10 +72,10 @@ Check_Maibox()
 {
 
 if (($MAILBOX_SERVERS > $MAILBOX_SERVERS)); then
-	$ERROR_TEXT "CUIDADO: A versao atual foi desenvolvida para ambientes Single Server ou com apenas um servidor mailbox."
-	$ERROR_TEXT "CUIDADO: Para ambientes com mais de um servidor Mailbox sera necessario alterar os arquivos exportados se desejar renomear os servidores"
+	$ERROR_TEXT "CAUTION: The current version was developed for Single Server environments or environments with just one mailbox server."
+	$ERROR_TEXT "CAUTION: For environments with more than one Mailbox server, it will be necessary to change the exported files if you want to rename the servers"
 else
-	$NORMAL_TEXT "OK: Ambiente possui apenas um servidor Mailbox"
+	$NORMAL_TEXT "OK: Environment has only one Mailbox server"
 fi
 }
 
@@ -84,7 +84,7 @@ fi
 Enter_New_Hostname()
 {
 
-read -p "Informe o novo hostname do servidor Zimbra: " userInput
+read -p "Enter the new Zimbra server hostname: " userInput
 
 
 if [[ -z "$userInput" ]]; then
@@ -93,12 +93,12 @@ if [[ -z "$userInput" ]]; then
      else
 	  TEST_FQDN=`echo $userInput | awk -F. '{print NF}'`
 	        if [ ! $TEST_FQDN -ge 2 ]; then
-		       $ERROR_TEXT "ERRO: O hostname informado nao e um FQDN valido"
+		       $ERROR_TEXT "Error: The hostname provided is not a valid FQDN"
 		       Enter_New_Hostname
 			fi
 	  OLD_HOSTNAME="$zimbra_server_hostname"
 	  NEW_HOSTNAME="$userInput"
-	  $CHOICE_TEXT "Hostname informado: $NEW_HOSTNAME"
+	  $CHOICE_TEXT "Hostname reported: $NEW_HOSTNAME"
 fi
 }
 
@@ -108,9 +108,9 @@ Run_as_Zimbra()
 {
 
 if [ "$(whoami)" == "zimbra" ]; then
-    $INFO_TEXT "OK: Executando como Zimbra."
+    $INFO_TEXT "OK: Running as Zimbra."
    else
-    $ERROR_TEXT "ERRO: Esse comando deve ser executado como Zimbra."
+    $ERROR_TEXT "ERROR: This command must be run as Zimbra."
     exit 1
 fi
 }
@@ -120,14 +120,14 @@ fi
 Replace_Hostname()
 {
 	#$INFO_TEXT "Modificar hostname"
-read -p "O Hostname do servidor do Zimbra sera alterado (sim/nao)?" choice
+read -p "Will the Zimbra server hostname be changed (yes/no)?" choice
    case "$choice" in
    y|Y|yes|s|S|sim ) 
-    $CHOICE_TEXT "O Hostname do servidor sera alterado." 
+    $CHOICE_TEXT "The server Hostname will be changed." 
 	Enter_New_Hostname 
 	Execute_Replace_Hostname 
 	;;
-   n|N|no|nao ) $CHOICE_TEXT "Sera mantido o hostname do servidor.";;
+   n|N|no|nao ) $CHOICE_TEXT "The server hostname will be maintained.";;
    * ) Replace_Hostname ;;
 esac
 }
@@ -136,7 +136,7 @@ esac
 
 Execute_Replace_Hostname()
 {
-sed -i s/$OLD_HOSTNAME/$NEW_HOSTNAME/g $DESTINO/CONTAS.ldif
+sed -i s/$OLD_HOSTNAME/$NEW_HOSTNAME/g $DESTINO/ACCOUNTS.ldif
 sed -i s/$OLD_HOSTNAME/$NEW_HOSTNAME/g $DESTINO/LISTAS.ldif
 }
 
@@ -144,10 +144,10 @@ sed -i s/$OLD_HOSTNAME/$NEW_HOSTNAME/g $DESTINO/LISTAS.ldif
 
 export_Mailboxes()
 {
-read -p "Deseja exportar as caixas postais (sim/nao)?" choice
+read -p "Do you want to export mailboxes (yes/no)?" choice
     case "$choice" in
-    y|Y|yes|s|S|sim ) $CHOICE_TEXT "Sera criada a RELACAO para o export FULL de todas as contas do sistema.";;
-    n|N|no|nao ) $CHOICE_TEXT "Nao sera efetuado o export das caixas postais. Execucao abortada pelo usuario." ; exit 0 ;;
+    y|Y|yes|s|S|sim ) $CHOICE_TEXT "The RELATIONSHIP will be created for the FULL export of all accounts in the system.";;
+    n|N|no|nao ) $CHOICE_TEXT "Mailboxes will not be exported. Execution aborted by user." ; exit 0 ;;
     * ) export_Mailboxes ;;
 esac
 }
@@ -156,13 +156,13 @@ esac
 
 Export_Dest()
 {
-read -p "Informe qual sera o diretorio utilizado para exportacao: " userInput
+read -p "Enter the directory used for export: " userInput
 if [[ -z "$userInput" ]]; then
-    $ERROR_TEXT "Nenhum diretorio informado"
+    $ERROR_TEXT "No directories provided"
     Export_Dest
        else
 	EXPORT_PATH="$userInput"   
-    $CHOICE_TEXT "Diretorio informado:" "$userInput"
+    $CHOICE_TEXT "Directory provided:" "$userInput"
 fi
 }
 
@@ -170,12 +170,12 @@ fi
 
 execute_Export_Full()
 {
-		 $NORMAL_TEXT "INBOX: Criando arquivo com as contas relacionadas para exportacao:" 
+		 $NORMAL_TEXT "INBOX: Creating a file with related accounts for export:" 
 		 $INFO_TEXT   "$WORKDIR/script_export_FULL.sh"
          for mailbox in $( echo $MAILBOX_LIST ); do
-		 echo "zmmailbox -z -m $mailbox -t 0 getRestURL \"//?fmt=tgz\" > $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_export_FULL.sh #comando para export full
+		 echo "zmmailbox -z -m $mailbox -t 0 getRestURL \"//?fmt=tgz\" > $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_export_FULL.sh #command to export full
 		 chmod +x $WORKDIR/script_export_FULL.sh
-		 echo "zmmailbox -z -m $mailbox -t 0 postRestURL \"//?fmt=tgz&resolve=skip\" $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_import_FULL.sh #comando para import full
+		 echo "zmmailbox -z -m $mailbox -t 0 postRestURL \"//?fmt=tgz&resolve=skip\" $EXPORT_PATH/$mailbox.tgz" >> $WORKDIR/script_import_FULL.sh #command to import full
 		 chmod +x $WORKDIR/script_import_FULL.sh
 done
 }
@@ -184,7 +184,7 @@ done
 
 execute_Export_Trash()
 {
-		 $NORMAL_TEXT "LIXEIRA: Criando arquivo com as contas relacionadas para exportacao:"
+		 $NORMAL_TEXT "TRASH: Creating file with related accounts for export:"
          $INFO_TEXT   "$WORKDIR/script_export_TRASH.sh"
         for i in $( echo $MAILBOX_LIST ); do
 		echo "zmmailbox -z -m $i -t 0 gru \"//Trash?fmt=tgz\" > $EXPORT_PATH/$i-Trash.tgz" >> $WORKDIR/script_export_TRASH.sh
@@ -199,13 +199,13 @@ done
 execute_Export_Junk()
 {
 
-	     $NORMAL_TEXT "SPAM: Criando arquivo com as contas relacionadas para exportacao:"
+	     $NORMAL_TEXT "SPAM: Creating file with related accounts for export:"
          $INFO_TEXT   "$WORKDIR/script_export_JUNK.sh"
 		 for i in $( echo $MAILBOX_LIST ); do
 		 echo "zmmailbox -z -m $i -t 0 gru \"//Junk?fmt=tgz\" > $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_export_JUNK.sh
 		 chmod +x $WORKDIR/script_export_JUNK.sh
-		 echo "zmmailbox -z -m $i -t 0 postRestURL \"//?fmt=tgz&resolve=skip\" $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_import_JUNK.sh
-		 chmod +x $WORKDIR/script_import_JUNK.sh
+		 echo "zmmailbox -z -m $i -t 0 postRestURL \"//?fmt=tgz&resolve=skip\" $EXPORT_PATH/$i-Junk.tgz" >> $WORKDIR/script_import_TRASH.sh
+		 chmod +x $WORKDIR/script_import_TRASH.sh
 done
 
 }
