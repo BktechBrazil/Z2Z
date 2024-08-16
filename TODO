@@ -6,7 +6,7 @@ TODO:
 [x] Incluir exceção para não importar contas de sistema (zimbraIsSystemResource:TRUE); 
 [x] Verificar timeout em operações de export e import com caixas postais grandes (+2GB); via <fbraga@trt13.jus.br>
 [ ] Criar controle de sessões de exportação e importação;
-[ ] Melhorar a varáivel para conectar no ldap com o valor da ldap_url ao invés de ldap://$ZIMBRA_HOSTNAME
+[ ] Melhorar a varáivel para conectar no ldap com o valor da ldap_url OU zmprov gas ldap ao invés de ldap://$ZIMBRA_HOSTNAME
 [ ] Habilitar opção para já iniciar o export das caixas postais; via <eduardo@bktech.com.br>
 [ ] Implementar migração dos domínios; - 1.2 
 [ ] Incrementar a documentação;
