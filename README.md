@@ -1,6 +1,6 @@
 # Z2Z (Zimbra2Zimbra Migration Tool) - _Versão 1.0.2_ - Mantido por BKTECH <http://www.bktech.com.br>
  
-# Copyright (C) 2016-2024  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
+# Copyright (C) 2016-2026  Fabio Soares Schmidt <fabio@respirandolinux.com.br> 
 
 # DISTRIBUÍDO SOB A LICENÇA CREATIVE COMMONS: Atribuição-NãoComercial-CompartilhaIgual (CC BY-NC-SA)
 
